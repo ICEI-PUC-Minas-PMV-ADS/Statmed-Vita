@@ -8,8 +8,6 @@ O mal funcionamento de softwares hospitalares pode ter consequências graves, de
 
 ## Objetivos
 
-Objetivo 
-
 Objetivo Geral 
 
 O principal objetivo da Statmed é suprir as demandas ligadas a problemas com softwares hospitalares de modo em que concentramos todas as informações relacionadas em um só lugar.
