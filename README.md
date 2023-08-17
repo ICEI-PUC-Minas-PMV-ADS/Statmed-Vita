@@ -1,23 +1,28 @@
-# TÍTULO DO PROJETO
+# STATMED
 
-`CURSO`
+`TECNOLOGIA EM ANÁLISE E DESENVOLVIMENTO DE SISTEMAS`
 
-`DISCIPLINA`
+`PROJETO: DESENVOLVIMENTO DE UMA APLICAÇÃO INTERATIVA`
 
-`SEMESTRE`
+`2º SEMESTRE`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+![Logo](https://github.com/ICEI-PUC-Minas-PMV-ADS/statmed/assets/98277143/23ed1c05-2e0e-4f67-9fb1-c57dca86cb1c)
+
+
+Statmed é uma solução desenvolvida para atender às necessidades do Serviço de Arquivo Médico e Estatística (SAME) oferecendo recursos para registro de pacientes e atendimentos desde a recepção até o médico, prontuário e prescrição médica além de  ferramentas de estatística e arquivamento.
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Diego Ruan Gomes
+* Felipe Massahiro Taguchi Coelho
+* Gabrielly Cristiny Gonçalves Andrade
+* Guilherme Almeida da Cruz Silva
+* Jardel Maldonado da Silva
+* Lizane Farias Rodrigues
 
 ## Orientador
 
-* Nome completo do professor 1
+* Matheus Curcino
 
 ## Instruções de utilização
 
