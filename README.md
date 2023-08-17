@@ -4,7 +4,7 @@
 
 `PROJETO: DESENVOLVIMENTO DE UMA APLICAÇÃO INTERATIVA`
 
-`2º SEMESTRE`
+`3º SEMESTRE`
 
 ![Logo](https://github.com/ICEI-PUC-Minas-PMV-ADS/statmed/assets/98277143/23ed1c05-2e0e-4f67-9fb1-c57dca86cb1c)
 
