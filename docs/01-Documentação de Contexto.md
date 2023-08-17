@@ -15,9 +15,13 @@ O principal objetivo da Statmed é suprir as demandas ligadas a problemas com so
 Objetivos Específicos:
 
 -Facilitar o cadastramento de pacientes para atendimento e direcionamento aos médicos;
+
 -Facilitar consulta de documentação de paciente;
+
 -Poder gerar diversos relatórios das passagens hospitalares cadastradas;
+
 -Facilitar o levantamento do histórico hospitalar para fornecer ao paciente em caso de pedido de cópia em norma LGPD;
+
 -Diminuir as desistências de consultas com o lembrete por notificação no dia;
 
 ## Justificativa
