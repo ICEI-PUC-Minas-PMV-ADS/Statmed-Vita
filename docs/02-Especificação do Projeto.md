@@ -69,8 +69,8 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
 |RF-001| Permitir que o usuário marque consultas | ALTA | 
-|RF-002| Permitir que o usuário desmarque consultas | MÉDIA |
-|RF-003| Permitir que o usuário veja as consultas marcadas | MÉDIA |
+|RF-002| Permitir que o usuário desmarque consultas | ALTA |
+|RF-003| Permitir que o usuário veja as consultas marcadas | ALTA |
 
 
 ### Requisitos não Funcionais
