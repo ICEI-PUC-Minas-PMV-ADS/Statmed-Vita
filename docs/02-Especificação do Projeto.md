@@ -3,7 +3,7 @@
 A definição exata do problema e os pontos mais relevantes a serem tratados neste projeto foi consolidada com a participação dos usuários em um trabalho de imersão feita pelos membros da equipe a partir da observação dos usuários em seu local natural e por meio de entrevistas. Os detalhes levantados nesse processo foram consolidados na forma de personas e histórias de usuários.
 ## Personas
 
-## Aldair Barbosa Silva 
+## Aldair Barbosa Silva
 
 <img style="margin-top: 40px;" align="left" width="240px" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e3-proj-mov-t5-statmed/assets/70419372/444d6feb-6163-43b4-9438-68621b5b363c">
 
@@ -33,11 +33,11 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 
 ### Análise da Situação Atual
 
-Apresente aqui os problemas existentes que viabilizam sua proposta. Apresente o modelo do sistema como ele funciona hoje. Caso sua proposta seja inovadora e não existam processos claramente definidos, apresente como as tarefas que o seu sistema pretende implementar são executadas atualmente, mesmo que não se utilize tecnologia computacional. 
+Possíveis problemas existentes na gestão hospitalar incluem falta de integração de dados, dificuldade na monitorização de recursos, falhas na coordenação de equipes e demora no atendimento. O Statmed busca resolver esses desafios ao centralizar informações, otimizar alocação de recursos, facilitar a comunicação entre equipes e agilizar processos de atendimento. No módulo mobile do Statmed ele funcionará como um facilitador do agendamento de consultas do paciente onde ele comunicará com o sistema do hospital (módulo desktop) para agendar ou desmarcar as mesmas.
 
 ### Descrição Geral da Proposta
 
-Apresente aqui uma descrição da sua proposta abordando seus limites e suas ligações com as estratégias e objetivos do negócio. Apresente aqui as oportunidades de melhorias.
+Statmed é uma solução desenvolvida para atender às necessidades do Serviço de Arquivo Médico e Estatística (SAME) oferecendo recursos para registro de pacientes e atendimentos desde a recepção até o médico, prontuário e prescrição médica, além de ferramentas de estatística e arquivamento.
 
 ### Processo 1 – NOME DO PROCESSO
 
