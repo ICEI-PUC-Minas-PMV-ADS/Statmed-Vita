@@ -1,10 +1,10 @@
 # Introdução
 
-Statmed é uma solução desenvolvida para atender às necessidades do Serviço de Arquivo Médico e Estatística (SAME) oferecendo recursos para registro de pacientes e atendimentos desde a recepção até o médico, prontuário e prescrição médica, além de ferramentas de estatística e arquivamento.
+Statmed mobile é um modulo do Statmed Desktop, uma solução desenvolvida para atender às necessidades do usuario do hospital oferecendo recursos para o agendamento de consultas a distância.
 
 ## Problema
 
-O mal funcionamento de softwares hospitalares pode ter consequências graves, desde atrasos em diagnósticos e tratamentos até erros médicos que colocam vidas em risco e a perda de documentos físicos que pode acarretar problemas para a gestão do hospital e problemas jurídicos.
+A falta de um software para realizar a comunicação entre o usuário e o hospital pode acarretar em diversas consequencias, tendo em vista que a falta de agilidade no agendamento é um grande fator que incomoda o usuario muitas vezes
 
 ## Objetivos
 
@@ -14,19 +14,14 @@ O principal objetivo da Statmed é suprir as demandas ligadas a problemas com so
 
 Objetivos Específicos:
 
--Facilitar o cadastramento de pacientes para atendimento e direcionamento aos médicos;
+-Facilitar o agendamento consulta do paciente;
 
--Facilitar consulta de documentação de paciente;
+-Facilitar o cancelamento da consulta de paciente;
 
--Poder gerar diversos relatórios das passagens hospitalares cadastradas;
-
--Facilitar o levantamento do histórico hospitalar para fornecer ao paciente em caso de pedido de cópia em norma LGPD;
-
--Diminuir as desistências de consultas com o lembrete por notificação no dia;
 
 ## Justificativa
 
-Consideramos que o Statmed é essencial para a gestão eficiente de informações de pacientes, facilitando o registro, acompanhamento e análise de dados clínicos e administrativos. Isso pode contribuir para a melhoria da qualidade do atendimento médico, redução de erros e desperdícios, além de proporcionar maior segurança e privacidade dos dados dos pacientes.
+Consideramos que o Statmed Mobile é essencial para a gestão eficiente de informações de pacientes, facilitando o registro, acompanhamento. Isso pode contribuir para a melhoria da qualidade do atendimento médico, redução de erros e desperdícios, além de proporcionar maior segurança e privacidade dos dados dos pacientes.
 
 ## Público-Alvo
 
