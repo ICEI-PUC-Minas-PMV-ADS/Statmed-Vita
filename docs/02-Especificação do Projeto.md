@@ -12,6 +12,15 @@ A definição exata do problema e os pontos mais relevantes a serem tratados nes
 Aldair Barbosa tem uma rotina super agitada e corrida graças ao sucesso do seu trabalho em sua cidade. Ninguém avalia um cano melhor que ele, porém, com o passar do tempo os problemas de saúde vão aparecendo e ele precisou redobrar o cuidado, como a sua rotina é super corrida um aplicativo no seu celular para ver as consultas agendadas e agendar as mesmas facilitariam muito sua rotina de acompanhamentos médicos.
 
 
+## André Fernandes
+
+<img style="margin-top: 40px;" align="left" width="240px" src="https://user-images.githubusercontent.com/98277143/226173982-ea43126c-4f02-42e7-bb60-07e432637880.png">
+  
+
+##### Profissão: Recepcionista
+##### Idade: 25 anos
+Recepcionista no hospital público e universitário. Possui sua rotina focada no seu trabalho e principalmente na sua faculdade no período noturno, vem sofrendo frequentemente com a dificuldade no atendimento dos pacientes do hospital devido ao método utilizado pelo hospital, gerando assim correrias e muitas vezes tumultos no hospital.
+
 
 #
 
@@ -24,10 +33,10 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
-|Aldair(Paciente)    | Agendar consultas                  | Cuidar da minha saúde                  |
-|Aldair(Paciente)    | Desmarcar consultas                | Caso ocorra algum imprevisto, conseguir desmarcar com facilidade as consultas agendadas |
+|Aldair(Paciente)    | Agendar consultas de uma forma mais agíl                | Cuidar da minha saúde                  |
+|Aldair(Paciente)    | Desmarcar consultas de uma forma mais agíl              | Caso ocorra algum imprevisto, conseguir desmarcar com facilidade as consultas agendadas |
 |Aldair(Paciente)    | Ver as consultas agendadas         | Manter minha rotina atualizada e não perder as consultas |
-
+|  Recepcionista (André) | Que a confirmação de consulta seja mais agíl  |  Diminuir o tempo que leva para confirmar as consultas |
 
 ## Modelagem do Processo de Negócio 
 
@@ -71,7 +80,9 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-001| Permitir que o usuário marque consultas | ALTA | 
 |RF-002| Permitir que o usuário desmarque consultas | ALTA |
 |RF-003| Permitir que o usuário veja as consultas marcadas | ALTA |
-
+|RF-004| Permitir que o recepcionista confirme as consultas | ALTA |
+|RF-005| Permitir que o recepcionista disponibilize data para as consultas | ALTA |
+|RF-006| Permitir que o recepcionista confirme o cancelamento das consultas | ALTA |
 
 ### Requisitos não Funcionais
 
