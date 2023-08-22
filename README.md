@@ -1,4 +1,4 @@
-# STATMED MOBILE
+# STATMED VIDA
 
 `TECNOLOGIA EM ANÁLISE E DESENVOLVIMENTO DE SISTEMAS`
 
@@ -8,8 +8,7 @@
 
 ![Logo](https://github.com/ICEI-PUC-Minas-PMV-ADS/statmed/assets/98277143/23ed1c05-2e0e-4f67-9fb1-c57dca86cb1c)
 
-
-Statmed é uma solução desenvolvida para atender às necessidades do Serviço de Arquivo Médico e Estatística (SAME) oferecendo recursos para registro de pacientes e atendimentos desde a recepção até o médico, prontuário e prescrição médica além de  ferramentas de estatística e arquivamento.
+Statmed Vida é um extensão mobile da aplicação de gestão hospitalar Statmed voltada para o paciente onde o mesmo pode marcar consultas, sondar suas passagens anteriores e acompanhar seus tratamentos visando auxiliar o tratamento médico com lembretes, agilidade para marcar consultas e diminuir desistências.
 
 ## Integrantes
 
