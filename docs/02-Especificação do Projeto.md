@@ -17,9 +17,19 @@ Aldair Barbosa tem uma rotina super agitada e corrida graças ao sucesso do seu 
 <img style="margin-top: 40px;" align="left" width="240px" src="https://user-images.githubusercontent.com/98277143/226173982-ea43126c-4f02-42e7-bb60-07e432637880.png">
   
 
-##### Profissão: Recepcionista
-##### Idade: 25 anos
-Recepcionista no hospital público e universitário. Possui sua rotina focada no seu trabalho e principalmente na sua faculdade no período noturno, vem sofrendo frequentemente com a dificuldade no atendimento dos pacientes do hospital devido ao método utilizado pelo hospital, gerando assim correrias e muitas vezes tumultos no hospital.
+## Profissão: Recepcionista
+### Idade: 25 anos
+Recepcionista no hospital público e universitário. Possui sua rotina focada no seu trabalho e principalmente na sua faculdade no período noturno, vem sofrendo frequentemente com a dificuldade no atendimento dos pacientes do hospital devido ao método utilizado pelo hospital, gerando assim correrias e muitas vezes tumultos no hospital. 
+
+
+## Regina 
+
+<img style="margin-top: 40px;" align="left" width="240px" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e3-proj-mov-t5-statmed/assets/70419372/fcd1eacd-b96e-475c-86c4-2352e225deba">
+  
+## Profissão: Propietaria de foodtruck
+### Idade: 39 anos
+
+É dona de um food truck de sucesso. Devido à sua agenda agitada, ela mal tem tempo para cuidar da saúde. Um dia, ela sentiu fortes dores abdominais e decide usar o Statmed Vida. Com o aplicativo, ela agenda consultas online, recebe lembretes de consultas próximas e acessa suas consultas agendadas, permitindo que mantenha seu negócio enquanto cuida de sua saúde de forma conveniente e eficiente.
 
 
 #
@@ -35,7 +45,7 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 |--------------------|------------------------------------|----------------------------------------|
 |Aldair(Paciente)    | Agendar consultas de uma forma mais agíl                | Cuidar da minha saúde                  |
 |Aldair(Paciente)    | Desmarcar consultas de uma forma mais agíl              | Caso ocorra algum imprevisto, conseguir desmarcar com facilidade as consultas agendadas |
-|Aldair(Paciente)    | Ver as consultas agendadas         | Manter minha rotina atualizada e não perder as consultas |
+|Regina(Paciente)    | Ver as consultas agendadas         | Manter minha rotina atualizada e não perder as consultas |
 |  Recepcionista (André) | Que a confirmação de consulta seja mais agíl  |  Diminuir o tempo que leva para confirmar as consultas |
 
 ## Modelagem do Processo de Negócio 
