@@ -3,36 +3,33 @@
 A definição exata do problema e os pontos mais relevantes a serem tratados neste projeto foi consolidada com a participação dos usuários em um trabalho de imersão feita pelos membros da equipe a partir da observação dos usuários em seu local natural e por meio de entrevistas. Os detalhes levantados nesse processo foram consolidados na forma de personas e histórias de usuários.
 ## Personas
 
-## Aldair Barbosa Silva
+As personas levantadas durante o processo de entendimento do problema são apresentadas a seguir:
 
 <img style="margin-top: 40px;" align="left" width="240px" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e3-proj-mov-t5-statmed/assets/70419372/444d6feb-6163-43b4-9438-68621b5b363c">
 
-## Profissão: Bombeiro Hidráulico
-### Idade: 46 anos
+## Aldair Barbosa Silva
+
+##### Profissão: Bombeiro Hidráulico
+##### Idade: 46 anos
 Aldair Barbosa tem uma rotina super agitada e corrida graças ao sucesso do seu trabalho em sua cidade. Ninguém avalia um cano melhor que ele, porém, com o passar do tempo os problemas de saúde vão aparecendo e ele precisou redobrar o cuidado, como a sua rotina é super corrida um aplicativo no seu celular para ver as consultas agendadas e agendar as mesmas facilitariam muito sua rotina de acompanhamentos médicos.
-
-
-## André Fernandes
+#
 
 <img style="margin-top: 40px;" align="left" width="240px" src="https://user-images.githubusercontent.com/98277143/226173982-ea43126c-4f02-42e7-bb60-07e432637880.png">
-  
 
-## Profissão: Recepcionista
-### Idade: 25 anos
+## André Fernandes  
+
+##### Profissão: Recepcionista
+##### Idade: 25 anos
 Recepcionista no hospital público e universitário. Possui sua rotina focada no seu trabalho e principalmente na sua faculdade no período noturno, vem sofrendo frequentemente com a dificuldade no atendimento dos pacientes do hospital devido ao método utilizado pelo hospital, gerando assim correrias e muitas vezes tumultos no hospital. 
-
-
-## Regina 
+#
 
 <img style="margin-top: 40px;" align="left" width="240px" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e3-proj-mov-t5-statmed/assets/70419372/fcd1eacd-b96e-475c-86c4-2352e225deba">
-  
-## Profissão: Proprietária de foodtruck
-### Idade: 39 anos
 
+## Regina Almeida
+
+##### Profissão: Proprietária de foodtruck
+##### Idade: 39 anos
 É dona de um food truck de sucesso. Devido à sua agenda agitada, ela mal tem tempo para cuidar da saúde. Um dia, ela sentiu fortes dores abdominais e decide usar o Statmed Vida. Com o aplicativo, ela agenda consultas online, recebe lembretes de consultas próximas e acessa suas consultas agendadas, permitindo que mantenha seu negócio enquanto cuida de sua saúde de forma conveniente e eficiente.
-
-#
-#
 #
 
 ## Histórias de Usuários
