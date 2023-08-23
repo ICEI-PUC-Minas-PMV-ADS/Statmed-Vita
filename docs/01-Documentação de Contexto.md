@@ -1,6 +1,6 @@
 # Introdução
 
-Statmed Vida é um extensão mobile da aplicação de gestão hospitalar Statmed voltada para o paciente onde o mesmo pode marcar consultas, sondar suas passagens anteriores e acompanhar seus tratamentos visando auxiliar o tratamento médico com lembretes, agilidade para marcar consultas e diminuir desistências.
+Statmed Vita é um extensão mobile da aplicação de gestão hospitalar Statmed voltada para o paciente onde o mesmo pode marcar consultas, sondar suas passagens anteriores e acompanhar seus tratamentos visando auxiliar o tratamento médico com lembretes, agilidade para marcar consultas e diminuir desistências.
 
 ## Problema
 
@@ -21,7 +21,7 @@ Objetivos Específicos:
 
 ## Justificativa
 
-Consideramos que o Statmed Vida é essencial para diminuir desistências de consultas, diminuindo assim custos e imprevistos para hospitais e clínicas, complementando o aplicativo de gestão hospitalar.
+Consideramos que o Statmed Vita é essencial para diminuir desistências de consultas, diminuindo assim custos e imprevistos para hospitais e clínicas, complementando o aplicativo de gestão hospitalar.
 
 ## Público-Alvo
 
