@@ -80,9 +80,10 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-001| Permitir que o usuário marque consultas | ALTA | 
 |RF-002| Permitir que o usuário desmarque consultas | ALTA |
 |RF-003| Permitir que o usuário veja as consultas marcadas | ALTA |
-|RF-004| Permitir que o recepcionista confirme as consultas | ALTA |
-|RF-005| Permitir que o recepcionista disponibilize data para as consultas | ALTA |
-|RF-006| Permitir que o recepcionista confirme o cancelamento das consultas | ALTA |
+|RF-004| Permitir que o usuário avise o atraso | ALTA |
+|RF-005| Permitir que o recepcionista confirme as consultas | ALTA |
+|RF-006| Permitir que o recepcionista disponibilize data para as consultas | ALTA |
+|RF-007| Permitir que o recepcionista confirme o cancelamento das consultas | ALTA |
 
 ### Requisitos não Funcionais
 
@@ -102,7 +103,7 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 ### Diagrama de Casos de Uso
 
-![Statmed mobile](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e3-proj-mov-t5-statmed/assets/70419372/9be02237-a1af-4de1-84da-7b3862e94a59)
+![Capturar](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e3-proj-mov-t5-statmed/assets/70419372/8c9f916d-a5f2-433d-b90d-cb4a0fd08e1b)
 
 
 # Matriz de Rastreabilidade
