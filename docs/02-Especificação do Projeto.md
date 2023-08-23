@@ -26,14 +26,12 @@ Recepcionista no hospital público e universitário. Possui sua rotina focada no
 
 <img style="margin-top: 40px;" align="left" width="240px" src="https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e3-proj-mov-t5-statmed/assets/70419372/fcd1eacd-b96e-475c-86c4-2352e225deba">
   
-## Profissão: Propietaria de foodtruck
+## Profissão: Proprietária de foodtruck
 ### Idade: 39 anos
 
 É dona de um food truck de sucesso. Devido à sua agenda agitada, ela mal tem tempo para cuidar da saúde. Um dia, ela sentiu fortes dores abdominais e decide usar o Statmed Vida. Com o aplicativo, ela agenda consultas online, recebe lembretes de consultas próximas e acessa suas consultas agendadas, permitindo que mantenha seu negócio enquanto cuida de sua saúde de forma conveniente e eficiente.
 
-
 #
-
 #
 #
 
@@ -43,10 +41,12 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
-|Aldair(Paciente)    | Agendar consultas de uma forma mais agíl                | Cuidar da minha saúde                  |
-|Aldair(Paciente)    | Desmarcar consultas de uma forma mais agíl              | Caso ocorra algum imprevisto, conseguir desmarcar com facilidade as consultas agendadas |
-|Regina(Paciente)    | Ver as consultas agendadas         | Manter minha rotina atualizada e não perder as consultas |
-|  Recepcionista (André) | Que a confirmação de consulta seja mais agíl  |  Diminuir o tempo que leva para confirmar as consultas |
+|Aldair (Paciente)| Agendar consultas e ver horários disponíveis | Me programar melhor|
+|Aldair (Paciente)| Desmarcar consultas sem necessidade de ligar| Em caso de imprevisto, conseguir desmarcar com facilidade as consultas agendadas |
+|Regina (Paciente)| Ver minhas consultas agendadas | Manter minha rotina atualizada |
+|Regina (Paciente)| Informar possíveis atrasos | Não perder meu horário marcado devido a encaixe para outras pacientes |
+|Recepcionista (André)| Uma confirmação de presença mais ágil  |  Diminuir o tempo que leva para confirmar as consultas |
+|Recepcionista (André)| Saber se houve desistência da consulta |Poder disponibilizar o horário para novas consultas ou encaixes. |
 
 ## Modelagem do Processo de Negócio 
 
