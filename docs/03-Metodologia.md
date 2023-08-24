@@ -8,11 +8,14 @@ O grupo se organizará a partir da metodologia ágil Kanban, que permite a melho
 
 ## Relação de Ambientes de Trabalho
 
-Os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a relação dos ambientes com seu respectivo propósito deverá ser apresentada em uma tabela que especifica que detalha Ambiente, Plataforma e Link de Acesso. 
-Nota: Vide documento modelo do estudo de caso "Portal de Notícias" e defina também os ambientes e frameworks que serão utilizados no desenvolvimento de aplicações móveis.
+| Plataforma  | Finalidade |
+| ------------ | ------------ |
+| [Github](https://desktop.github.com/ "Github")  | Respositório, Metodologia & Documentação   |
+| [Discord](https://discord.com/ "Discord"), [Whatsapp](https://www.whatsapp.com/?lang=pt_BR "Whatsapp")  | Reuniões, planejamento do grupo |
+| [Figma](https://www.figma.com/ "Figma") | Desenho de tela (Wireframing), Diagramas & UI/UX |
+
 
 ## Controle de Versão
-
 
 A ferramenta de controle de versão adotada no projeto foi o
 [Git](https://git-scm.com/), sendo que o [Github](https://github.com)
