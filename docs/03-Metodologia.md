@@ -54,6 +54,7 @@ Optamos por 3 branchs para versionamento do projeto sendo a `dev` direcionada ao
  
 - Equipe de desenvolvimento: 
    - Diego Gomes
+   - Guilherme Cruz
     
 - UI/UX:
   - Gabrielly Andrade
