@@ -1,1 +1,22 @@
+CREATE SCHEMA IF NOT EXISTS `statmed` DEFAULT CHARACTER SET utf8 ;
+USE `statmed` ;
 
+-- -----------------------------------------------------
+-- Table `statmed`.`Usuario`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `statmed`.`Usuario` (
+  `cpf` VARCHAR(14) NOT NULL,
+  `nome` VARCHAR(50) NOT NULL,
+  `email` VARCHAR(45) NOT NULL,
+  `telefone` VARCHAR(45) NOT NULL,
+  `Endereco` VARCHAR(45) NOT NULL,
+  `dataNasc` DATE NOT NULL,
+  `Senha` VARCHAR(45) NOT NULL,
+  UNIQUE INDEX `cpf_UNIQUE` (`cpf` ASC) VISIBLE,
+  PRIMARY KEY (`cpf`))
+ENGINE = InnoDB;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
