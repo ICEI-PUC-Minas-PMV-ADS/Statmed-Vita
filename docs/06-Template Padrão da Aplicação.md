@@ -1,12 +1,14 @@
 # Template Padrão da Aplicação
 
-<span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Especificação do Projeto</a></span>, <a href="3-Projeto de Interface.md"> Projeto de Interface</a>, <a href="4-Metodologia.md"> Metodologia</a>
+## Telas
 
-Layout padrão da aplicação que será utilizado em todas as páginas com a definição de identidade visual, aspectos de responsividade e iconografia.
+## Ícones 
+![Icone Exemplo](https://github.com/ICEI-PUC-Minas-PMV-ADS/Statmed-Vita/assets/98277143/879a485a-dce4-4afa-bb97-a5ca5ea5a24b)
 
-> **Links Úteis**:
->
-> - [CSS Website Layout (W3Schools)](https://www.w3schools.com/css/css_website_layout.asp)
-> - [Website Page Layouts](http://www.cellbiol.com/bioinformatics_web_development/chapter-3-your-first-web-page-learning-html-and-css/website-page-layouts/)
-> - [Perfect Liquid Layout](https://matthewjamestaylor.com/perfect-liquid-layouts)
-> - [How and Why Icons Improve Your Web Design](https://usabilla.com/blog/how-and-why-icons-improve-you-web-design/)
+## Logo
+
+## Paleta de cores
+![Paleta de cores](https://github.com/ICEI-PUC-Minas-PMV-ADS/Statmed-Vita/assets/98277143/9838c421-1c17-4326-a168-1479f1567eaf)
+
+## Fontes
+![Fonte](https://github.com/ICEI-PUC-Minas-PMV-ADS/Statmed-Vita/assets/98277143/6e5de0a3-4fd2-417c-878f-cfa9e14f8673)
