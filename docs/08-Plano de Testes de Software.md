@@ -11,7 +11,6 @@
 |T-007|Verifiação do status de cancelamento de consultas pelo recepcionista|Em desenvolvimento|RF-007|
 
 
-## Exibição dos Tstes
 
 ## Ferramentas de Testes (Opcional)
 
