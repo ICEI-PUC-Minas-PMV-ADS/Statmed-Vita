@@ -1,7 +1,7 @@
 # Plano de Testes de Software
 
-| Teste | Descrição | resultado | requisito referência |
-| -------|------------|-----------|
+|Teste|Descrição|resultado|requisito referência|
+|-----------|------------|----------------|-----------------------|
 |T-001| Registro de nova consulta | Sem erros apresentados durante os testes | RF-001|
 |T-002|Cancelamento de uma consulta marcada pelo usuário|Em desenvolvimento|RF-002|
 |T-003|Exibição das consultas agendadas do usuário| Em desenvolvimento|RF-003|
