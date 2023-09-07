@@ -10,18 +10,15 @@ Definição de como o software é estruturado em termos dos componentes que faze
 
 O diagrama de classes ilustra graficamente como será a estrutura do software, e como cada uma das classes da sua estrutura estarão interligadas. Essas classes servem de modelo para materializar os objetos que executarão na memória.
 
-As referências abaixo irão auxiliá-lo na geração do artefato “Diagrama de Classes”.
+![Capturar](https://github.com/ICEI-PUC-Minas-PMV-ADS/Statmed-Vita/assets/70419372/ba6e8e11-c3bd-481c-a6c3-7bf870794089)
 
-> - [Diagramas de Classes - Documentação da IBM](https://www.ibm.com/docs/pt-br/rational-soft-arch/9.6.1?topic=diagrams-class)
-> - [O que é um diagrama de classe UML? | Lucidchart](https://www.lucidchart.com/pages/pt/o-que-e-diagrama-de-classe-uml)
 
 ## Modelo ER
 
-O Modelo ER representa através de um diagrama como as entidades (coisas, objetos) se relacionam entre si na aplicação interativa.]
+O Modelo ER representa através de um diagrama como as entidades (coisas, objetos) se relacionam entre si na aplicação interativa.
 
-As referências abaixo irão auxiliá-lo na geração do artefato “Modelo ER”.
+![modelo er](https://github.com/ICEI-PUC-Minas-PMV-ADS/Statmed-Vita/assets/70419372/7797c70b-1421-460d-852b-1ab31bd39eff)
 
-> - [Como fazer um diagrama entidade relacionamento | Lucidchart](https://www.lucidchart.com/pages/pt/como-fazer-um-diagrama-entidade-relacionamento)
 
 ## Esquema Relacional
 
@@ -34,6 +31,33 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Esquema Rel
 ## Modelo Físico
 
 Entregar um arquivo banco.sql contendo os scripts de criação das tabelas do banco de dados. Este arquivo deverá ser incluído dentro da pasta src\bd.
+
+Script do Banco de Dados:
+
+CREATE SCHEMA IF NOT EXISTS `statmed` DEFAULT CHARACTER SET utf8 ;
+USE `statmed` ;
+
+-- -----------------------------------------------------
+-- Table `statmed`.`Usuario`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `statmed`.`Usuario` (
+  `cpf` VARCHAR(14) NOT NULL,
+  `nome` VARCHAR(50) NOT NULL,
+  `email` VARCHAR(45) NOT NULL,
+  `telefone` VARCHAR(45) NOT NULL,
+  `Endereco` VARCHAR(45) NOT NULL,
+  `dataNasc` DATE NOT NULL,
+  `Senha` VARCHAR(45) NOT NULL,
+  UNIQUE INDEX `cpf_UNIQUE` (`cpf` ASC) VISIBLE,
+  PRIMARY KEY (`cpf`))
+ENGINE = InnoDB;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+ng StatmedVitaDB.sql…]()
+
 
 ## Tecnologias Utilizadas
 
