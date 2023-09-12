@@ -1,7 +1,5 @@
 # Metodologia
 
-<span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Documentação de Especificação</a></span>
-
 Nessa seção, serão apresentadas as ferramentas utilizadas para o desenvolvimento do projeto, tanto para o gerenciamento dos códigos e artefatos produzidos no decorrer de seu desenvolvimento, quanto na organização da equipe em cada uma das tarefas propostas em reunião.
 
 O grupo se organizará a partir da metodologia ágil Kanban, que permite a melhor gestão de tarefas e conduz cada atividade por meio de um fluxo de trabalho estabelecido, de maneira visual ideal para nossa equipe com menos colaboradores.
