@@ -51,13 +51,13 @@ Optamos por 3 branchs para versionamento do projeto sendo a `dev` direcionada ao
    - Felipe Coelho
  
 - Equipe de desenvolvimento: 
-   - Diego Gomes
    - Guilherme Cruz
-    
+   - Gabrielly Andrade
+   - Vinicius Soares
+     
 - UI/UX:
-  - Gabrielly Andrade
-  - Guilherme Cruz
-
+   - Diego Gomes
+   
 ### Processo
 
 O planejamento foi feito utilizando o Github Projects, com o sistema automatizado Kanban. Nele temos o direcionamento de tarefas já integrado ao issues do github e quando criados são automaticamente adicionados a coluna `Backlog` e somente ápos a análise inicial de nosso flow master são transferidos a coluna `Não Iniciado` que por sua vez é reservada para tarefas que já estão em nosso conhecimento porém sem um plano de começar iniciado. Ao iniciarmos o desenvolvimento da tarefa ela é direcionada a coluna `Em progresso`, se for caso que necessite teste ápos completa ela é transferida a coluna `Em Teste`, e quando concluidos são automaticamente direcionados a coluna `Completado` que por sua vez são arquivados àpos 2 semanas.
