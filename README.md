@@ -18,6 +18,7 @@ Statmed Vita é um extensão mobile da aplicação de gestão hospitalar Statmed
 * Guilherme Almeida da Cruz Silva
 * Jardel Maldonado da Silva
 * Lizane Farias Rodrigues
+* Vinicius Soares
 
 ## Orientador
 
