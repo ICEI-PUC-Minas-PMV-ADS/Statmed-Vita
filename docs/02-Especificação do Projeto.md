@@ -55,17 +55,44 @@ Possíveis problemas existentes na gestão hospitalar incluem falta de integraç
 
 Statmed é uma solução desenvolvida para atender às necessidades do Serviço de Arquivo Médico e Estatística (SAME) oferecendo recursos para registro de pacientes e atendimentos desde a recepção até o médico, prontuário e prescrição médica, além de ferramentas de estatística e arquivamento.
 
-### Processo 1 – NOME DO PROCESSO
+### Processo 1 – Marcar Consulta
 
-Apresente aqui o nome e as oportunidades de melhorias para o processo 1. Em seguida, apresente o modelo do processo 1, descrito no padrão BPMN. 
+Abaixo descreve o processo de marcação de consulta que o cliente irá efetuar através do APP e como o sistema irá receber essa ação. 
 
-![Processo 1](img/02-bpmn-proc1.png)
 
-### Processo 2 – NOME DO PROCESSO
+![Diagrama sem nome-Marcar consulta drawio (3)](https://github.com/ICEI-PUC-Minas-PMV-ADS/Statmed-Vita/assets/114541642/6fdf3ccf-5c39-412a-9843-10c1e67340fd)
 
-Apresente aqui o nome e as oportunidades de melhorias para o processo 2. Em seguida, apresente o modelo do processo 2, descrito no padrão BPMN.
 
-![Processo 2](img/02-bpmn-proc2.png)
+### Processo 2 – Desmarcar Consulta
+
+Abaixo descreve o processo de desmarcar consulta que o cliente irá efetuar através do APP e como o sistema irá receber essa ação.
+
+![Diagrama sem nome-Desmarcar consulta drawio](https://github.com/ICEI-PUC-Minas-PMV-ADS/Statmed-Vita/assets/114541642/18730033-0fa7-4206-b2f6-fd989ab79f9d)
+
+
+### Processo 3 – Consulta Marcada
+
+Abaixo descreve o processo de consulta marcada que o cliente irá efetuar através do APP e como o sistema irá receber essa ação.
+
+![Diagrama sem nome-Visualizar Consulta Marcada drawio](https://github.com/ICEI-PUC-Minas-PMV-ADS/Statmed-Vita/assets/114541642/187ee0ad-3aa7-4c36-b294-3fb5c116467a)
+
+
+
+### Processo 4 – Confirmar Consulta
+
+Abaixo descreve o processo de confirmar consulta que o cliente irá efetuar através do APP e como o sistema irá receber essa ação.
+
+![Diagrama sem nome-Confirmar Consulta drawio](https://github.com/ICEI-PUC-Minas-PMV-ADS/Statmed-Vita/assets/114541642/ffab9fb9-ffee-4e29-9519-aef8a6e1d776)
+
+
+
+### Processo 5 – Aviso de Atraso
+
+Abaixo descreve o processo de aviso de atraso que o cliente irá efetuar através do APP e como o sistema irá receber essa ação.
+
+![Diagrama sem nome-Aviso de Atraso drawio](https://github.com/ICEI-PUC-Minas-PMV-ADS/Statmed-Vita/assets/114541642/19e7dc56-4ade-4dad-a338-c00bf4845ada)
+
+
 
 ## Indicadores de Desempenho
 
