@@ -12,8 +12,29 @@ CREATE TABLE IF NOT EXISTS `statmed`.`Usuario` (
   `Endereco` VARCHAR(45) NOT NULL,
   `dataNasc` DATE NOT NULL,
   `Senha` VARCHAR(45) NOT NULL,
-  UNIQUE INDEX `cpf_UNIQUE` (`cpf` ASC) VISIBLE,
+  UNIQUE INDEX `cpf_UNIQUE` (`cpf` ASC) ,
   PRIMARY KEY (`cpf`))
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `statmed`.`Consulta`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `statmed`.`Consulta` (
+  `IdConsulta` VARCHAR(14) NOT NULL,
+  `Usuario_cpf` VARCHAR(14) NOT NULL,
+  `Usuario_nome` VARCHAR(50) NOT NULL,
+  `Medico` VARCHAR(45) NOT NULL,
+  `Especialidade` VARCHAR(45) NOT NULL,
+  `Data` DATETIME NOT NULL,
+  `Convenio` VARCHAR(45) NOT NULL,
+  UNIQUE INDEX `cpf_UNIQUE` (`IdConsulta` ASC) ,
+  PRIMARY KEY (`IdConsulta`, `Usuario_cpf`),
+  INDEX `fk_Consulta_Usuario_idx` (`Usuario_cpf` ASC) ,
+  CONSTRAINT `fk_Consulta_Usuario`
+    FOREIGN KEY (`Usuario_cpf`)
+    REFERENCES `statmed`.`Usuario` (`cpf`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
