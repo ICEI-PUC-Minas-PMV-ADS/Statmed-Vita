@@ -10,14 +10,16 @@ Definição de como o software é estruturado em termos dos componentes que faze
 
 O diagrama de classes ilustra graficamente como será a estrutura do software, e como cada uma das classes da sua estrutura estarão interligadas. Essas classes servem de modelo para materializar os objetos que executarão na memória.
 
-![Capturar](https://github.com/ICEI-PUC-Minas-PMV-ADS/Statmed-Vita/assets/70419372/ba6e8e11-c3bd-481c-a6c3-7bf870794089)
+![Capturar](https://github.com/ICEI-PUC-Minas-PMV-ADS/Statmed-Vita/assets/70419372/231d4191-21fa-476a-bd22-3b4870f98042)
+
 
 
 ## Modelo ER
 
 O Modelo ER representa através de um diagrama como as entidades (coisas, objetos) se relacionam entre si na aplicação interativa.
 
-![modelo er](https://github.com/ICEI-PUC-Minas-PMV-ADS/Statmed-Vita/assets/70419372/7797c70b-1421-460d-852b-1ab31bd39eff)
+![modelo er](https://github.com/ICEI-PUC-Minas-PMV-ADS/Statmed-Vita/assets/70419372/013a46b4-9e60-4f87-84bb-bdcfa86f1394)
+
 
 
 ## Esquema Relacional
@@ -33,7 +35,6 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Esquema Rel
 Entregar um arquivo banco.sql contendo os scripts de criação das tabelas do banco de dados. Este arquivo deverá ser incluído dentro da pasta src\bd.
 
 Script do Banco de Dados:
-
 CREATE SCHEMA IF NOT EXISTS `statmed` DEFAULT CHARACTER SET utf8 ;
 USE `statmed` ;
 
@@ -48,15 +49,35 @@ CREATE TABLE IF NOT EXISTS `statmed`.`Usuario` (
   `Endereco` VARCHAR(45) NOT NULL,
   `dataNasc` DATE NOT NULL,
   `Senha` VARCHAR(45) NOT NULL,
-  UNIQUE INDEX `cpf_UNIQUE` (`cpf` ASC) VISIBLE,
+  UNIQUE INDEX `cpf_UNIQUE` (`cpf` ASC) ,
   PRIMARY KEY (`cpf`))
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `statmed`.`Consulta`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `statmed`.`Consulta` (
+  `IdConsulta` VARCHAR(14) NOT NULL,
+  `Usuario_cpf` VARCHAR(14) NOT NULL,
+  `Usuario_nome` VARCHAR(50) NOT NULL,
+  `Medico` VARCHAR(45) NOT NULL,
+  `Especialidade` VARCHAR(45) NOT NULL,
+  `Data` DATETIME NOT NULL,
+  `Convenio` VARCHAR(45) NOT NULL,
+  UNIQUE INDEX `cpf_UNIQUE` (`IdConsulta` ASC),
+  PRIMARY KEY (`IdConsulta`, `Usuario_cpf`),
+  INDEX `fk_Consulta_Usuario_idx` (`Usuario_cpf` ASC) ,
+  CONSTRAINT `fk_Consulta_Usuario`
+    FOREIGN KEY (`Usuario_cpf`)
+    REFERENCES `statmed`.`Usuario` (`cpf`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-ng StatmedVitaDB.sql…]()
 
 
 ## Tecnologias Utilizadas
