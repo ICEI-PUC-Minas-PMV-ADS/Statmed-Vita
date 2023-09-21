@@ -118,6 +118,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-005| Permitir que o recepcionista confirme as consultas | ALTA |
 |RF-006| Permitir que o recepcionista disponibilize data para as consultas | ALTA |
 |RF-007| Permitir que o recepcionista confirme o cancelamento das consultas | ALTA |
+|RF-008| Permitir cadastro e acesso de usuários | ALTA |
 
 ### Requisitos não Funcionais
 
