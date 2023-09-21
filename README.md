@@ -6,7 +6,7 @@
 
 `3º SEMESTRE`
 
-![Logo](https://github.com/ICEI-PUC-Minas-PMV-ADS/Statmed-Vita/assets/98277143/993132d9-e1ee-4a44-be7b-897247297264)
+![Logo](https://github.com/ICEI-PUC-Minas-PMV-ADS/Statmed-Vita/assets/98277143/8dfb60cc-3be5-4008-8838-128958b6e33c)
 
 Statmed Vita é um extensão mobile da aplicação de gestão hospitalar Statmed voltada para o paciente onde o mesmo pode marcar consultas, sondar suas passagens anteriores e acompanhar seus tratamentos visando auxiliar o tratamento médico com lembretes, agilidade para marcar consultas e diminuir desistências.
 
