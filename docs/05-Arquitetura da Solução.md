@@ -2,9 +2,10 @@
 
 <span style="color:red">Pré-requisitos: <a href="3-Projeto de Interface.md"> Projeto de Interface</a></span>
 
-Definição de como o software é estruturado em termos dos componentes que fazem parte da solução e do ambiente de hospedagem da aplicação.
+Abaixo o modelo representa a forma que o aplicativo irá realizar a comunicação com a aplicação utilizando o protocolo HTTP e tendo como retorno json. E sua aplicação estará hospedada em um servidor que estará rodando o docker.
 
-![Arquitetura da Solução](img/02-mob-arch.png)
+![Arquitetura da Solução](https://github.com/ICEI-PUC-Minas-PMV-ADS/Statmed-Vita/assets/114541642/dce755aa-5350-44d0-a0c2-c5062f632292)
+
 
 ## Diagrama de Classes
 
