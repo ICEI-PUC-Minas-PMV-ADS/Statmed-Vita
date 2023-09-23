@@ -96,12 +96,13 @@ Abaixo descreve o processo de aviso de atraso que o cliente irá efetuar atravé
 
 ## Indicadores de Desempenho
 
-Apresente aqui os principais indicadores de desempenho e algumas metas para o processo. Atenção: as informações necessárias para gerar os indicadores devem estar contempladas no diagrama de classe. Colocar no mínimo 5 indicadores. 
-
-Usar o seguinte modelo: 
-
-![Indicadores de Desempenho](img/02-indic-desemp.png)
-Obs.: todas as informações para gerar os indicadores devem estar no diagrama de classe a ser apresentado a posteriori. 
+|Indicador|Objetivos|Descrição|Cálculo|Fonte de Dados|Perspectiva| 
+|---------|---------|---------|-------|--------------|-----------| 
+|Taxa de reclamação de usuário|Avaliar a quantidade de reclamações de usuários| Percentual de reclamações em relação à quantidade de usuários| | Registro de avaliações de usuários| Usuários| 
+|Total de defeitos detectados|Avaliar a viabilidade da disponibilização de uma versão final do sistema| Quantidade de falhas encontradas durante os testes de software em relação à quantidade de testes realizados| |Tabela de Testes de Software|Desenvolvedores| 
+|Tempo médio entre falhas|Avaliar a frequência da manutenção do sistema|Cálculo do intervalo entre o registro de uma falha e outra nova||Registro de avaliações de usuários|Desenvolvedores| 
+|Taxa de resolução de defeitos|Avaliar a dificuldade de manutenção do software|Calculo do total de defeitos resolvidos em relação ao total de defeitos notificados||Registro de avaliações de usuários|Desenvolvedores| 
+|Tempo médio de reparo|Avaliar a dificuldade da manutenção de software pelo tempo médio entre cada manutenção|Cálculo da média de tempo entre a notificação de uma falha no sistema e a correção dessa falha||Resgistro de avaliações de usuário|Desenvolvedores| 
 
 ## Requisitos
 
