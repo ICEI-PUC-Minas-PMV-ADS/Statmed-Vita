@@ -10,8 +10,8 @@ import { createMaterialBottomTabNavigator } from "react-native-paper/react-navig
 
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import Home from './screens/Home';
-import HospitalHistory from './screens/HospitalHistory';
+import Home from './src/screens/Home';
+import HospitalHistory from './src/screens/HospitalHistory';
 
 export default function App() {
   const Tab = createMaterialBottomTabNavigator();
