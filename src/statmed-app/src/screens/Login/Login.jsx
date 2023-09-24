@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Text } from 'react-native-paper';
-import { View } from 'react-native';
+import { View, Image } from 'react-native';
 import { TextInput } from 'react-native-paper';
-import { Image } from 'expo-image';
+// import { Image } from 'expo-image';
 import styles from './styles';
 import { Button } from 'react-native-paper';
 import StatmedVitaLogo from '../../../assets/statmedvita-logo.png'
@@ -16,11 +16,11 @@ export default function Login() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', marginHorizontal: 30 }}>
       <Image
-        style={styles.image}
+        style={{
+          width: '100%',
+          height: 67,
+        }}
         source={StatmedVitaLogo}
-        placeholder={blurhash}
-        contentFit="contain"
-        transition={1000}
       />
       <TextInput
         style={styles.input}
