@@ -1,6 +1,6 @@
 # Registro de Testes de Software
 
-|Teste|Descrição|resultado|requisito referência|
+|Teste|Descrição|Resultado|Requisito referência|
 |-----------|------------|----------------|-----------------------|
 |T-008|Verifiação do status de Login|Sem erros apresentados durante os testes|RF-008|.
 
