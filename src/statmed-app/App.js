@@ -21,7 +21,7 @@ export default function App() {
   return (
     <PaperProvider theme={theme}>
       <NavigationContainer>
-        <Tab.Navigator initialRouteName='Login'>
+        <Tab.Navigator initialRouteName='Home'>
           <Tab.Screen
             name="Home"
             component={Home}

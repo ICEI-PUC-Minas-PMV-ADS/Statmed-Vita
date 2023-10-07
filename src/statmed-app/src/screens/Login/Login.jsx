@@ -2,7 +2,6 @@ import * as React from 'react';
 import { Text } from 'react-native-paper';
 import { View, Image } from 'react-native';
 import { TextInput } from 'react-native-paper';
-// import { Image } from 'expo-image';
 import styles from './styles';
 import { Button } from 'react-native-paper';
 import StatmedVitaLogo from '../../../assets/statmedvita-logo.png'
