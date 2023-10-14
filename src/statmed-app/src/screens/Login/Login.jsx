@@ -18,6 +18,7 @@ export default function Login() {
         style={{
           width: '100%',
           height: 67,
+          marginBottom: 16,
         }}
         source={StatmedVitaLogo}
       />

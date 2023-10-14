@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Text } from 'react-native-paper';
-import { View, Image } from 'react-native';
+import { View, Image, ScrollView } from 'react-native';
 import { TextInput } from 'react-native-paper';
 import styles from './styles';
 import { Button } from 'react-native-paper';
@@ -13,11 +13,13 @@ export default function Register() {
   const [checked, setChecked] = React.useState(false);
 
   return (
-    <View style={{ flex: 1, justifyContent: 'center', marginHorizontal: 30 }}>
+    <View style={{ flex: 1, justifyContent: 'center', marginHorizontal: 30, marginVertical: 30 }}>
+      <ScrollView>
       <Image
         style={{
           width: '100%',
           height: 67,
+          marginBottom: 16,
         }}
         source={StatmedVitaLogo}
       />
@@ -60,12 +62,8 @@ export default function Register() {
         />
       </View>
       <Button style={styles.button} uppercase icon="exit-to-app" mode="contained" onPress={() => console.log('Pressed')}>
-        Entrar
+        Registrar
       </Button>
-      <View>
-        <Text style={styles.text}>PRIMEIRO ACESSO? <Text style={styles.textLink}>CADASTRE-SE</Text></Text>
-      </View>
-
       <View>
         <Text style={styles.middleText} variant='bodyLarge'>OU CONTINUE COM</Text>
       </View>
@@ -75,7 +73,7 @@ export default function Register() {
       <Button style={styles.socialMediaButton} uppercase icon="facebook" mode="contained" onPress={() => console.log('Pressed')}>
         Facebook
       </Button>
-
+      </ScrollView>
     </View>
   );
 }

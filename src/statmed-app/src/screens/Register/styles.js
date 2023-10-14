@@ -11,11 +11,12 @@ const styles = StyleSheet.create({
     marginBottom: 10
   },
   button: {
-    marginBottom: 10
+    marginBottom: 10,
+    borderRadius: 4,
   },
   text: {
     color: '#FFFF',
-    textAlign: 'right'
+    textAlign: 'center'
   },
   textLink: {
     color: '#00C975',
@@ -27,7 +28,8 @@ const styles = StyleSheet.create({
   },
   socialMediaButton: {
     color: '#DCDCDC',
-    marginBottom: 10
+    marginBottom: 10,
+    borderRadius: 4,
   },
 });
 

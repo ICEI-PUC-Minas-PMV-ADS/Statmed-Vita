@@ -7,11 +7,11 @@ const theme = {
   // Specify custom property in nested object
   colors: {
     "primary": "rgb(0, 109, 61)",
-    "onPrimary": "rgb(255, 255, 255)",
+    "onPrimary": "#00C975",
     "primaryContainer": "rgb(95, 254, 164)",
     "onPrimaryContainer": "rgb(0, 33, 15)",
     "secondary": "rgb(0, 109, 60)",
-    "onSecondary": "rgb(255, 255, 255)",
+    "onSecondary": "#00C975",
     "secondaryContainer": "rgb(90, 255, 162)",
     "onSecondaryContainer": "rgb(0, 33, 14)",
     "error": "rgb(192, 1, 0)",
@@ -28,7 +28,7 @@ const theme = {
     "elevation": {
       "level0": "transparent",
       "level1": "rgb(238, 246, 239)",
-      "level2": "rgb(231, 242, 233)",
+      "level2": "#00C975",
       "level3": "rgb(223, 237, 227)",
       "level4": "rgb(221, 236, 226)",
       "level5": "rgb(216, 233, 222)"
