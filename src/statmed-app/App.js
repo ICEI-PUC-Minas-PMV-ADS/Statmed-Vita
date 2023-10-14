@@ -14,53 +14,66 @@ import Home from './src/screens/Home';
 import HospitalHistory from './src/screens/HospitalHistory';
 import Login from './src/screens/Login';
 import Register from './src/screens/Register';
+import { AuthProvider, useAuth } from './src/context/AuthContext';
 
 export default function App() {
   const Tab = createMaterialBottomTabNavigator();
+  const { authState, onLogout } = useAuth()
 
   return (
-    <PaperProvider theme={theme}>
-      <NavigationContainer>
-        <Tab.Navigator initialRouteName='Home'>
-          <Tab.Screen
-            name="Home"
-            component={Home}
-            options={{
-              tabBarIcon: ({ color }) => (
-                <MaterialCommunityIcons name="home" color={color} size={26} />
-              ),
-            }}
-          />
-          <Tab.Screen
-            name="HospitalHistory"
-            component={HospitalHistory}
-            options={{
-              tabBarIcon: ({ color }) => (
-                <MaterialCommunityIcons name="cog" color={color} size={26} />
-              ),
-            }}
-          />
-          <Tab.Screen
-            name="Login"
-            component={Login}
-            options={{
-              tabBarIcon: ({ color }) => (
-                <MaterialCommunityIcons name="home" color={color} size={26} />
-              ),
-            }}
-          />
-          <Tab.Screen
-            name="Register"
-            component={Register}
-            options={{
-              tabBarIcon: ({ color }) => (
-                <MaterialCommunityIcons name="home" color={color} size={26} />
-              ),
-            }}
-          />
-        </Tab.Navigator>
-      </NavigationContainer>
-    </PaperProvider>
+    <AuthProvider>
+      <PaperProvider theme={theme}>
+        <NavigationContainer>
+          <Tab.Navigator initialRouteName='Home'>
+            { authState?.authenticated ? 
+              (
+                <>
+                  <Tab.Screen
+                    name="Home"
+                    component={Home}
+                    options={{
+                      tabBarIcon: ({ color }) => (
+                        <MaterialCommunityIcons name="home" color={color} size={26} />
+                      ),
+                    }}
+                  />
+                  <Tab.Screen
+                    name="HospitalHistory"
+                    component={HospitalHistory}
+                    options={{
+                      tabBarIcon: ({ color }) => (
+                        <MaterialCommunityIcons name="cog" color={color} size={26} />
+                      ),
+                    }}
+                  />
+                </>
+              )
+            : (
+                <>
+                  <Tab.Screen
+                    name="Login"
+                    component={Login}
+                    options={{
+                      tabBarIcon: ({ color }) => (
+                        <MaterialCommunityIcons name="home" color={color} size={26} />
+                      ),
+                    }}
+                  />
+                  <Tab.Screen
+                    name="Register"
+                    component={Register}
+                    options={{
+                      tabBarIcon: ({ color }) => (
+                        <MaterialCommunityIcons name="home" color={color} size={26} />
+                      ),
+                    }}
+                  />
+                </>
+              )}
+          </Tab.Navigator>
+        </NavigationContainer>
+      </PaperProvider>
+    </AuthProvider>
   );
 }
 
