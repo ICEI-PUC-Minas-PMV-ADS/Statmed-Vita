@@ -5,7 +5,6 @@ import { TextInput } from 'react-native-paper';
 import styles from './styles';
 import { Button } from 'react-native-paper';
 import StatmedVitaLogo from '../../../assets/statmedvita-logo.png'
-import { Checkbox } from 'react-native-paper';
 import { API_URL, useAuth } from '../../context/AuthContext';
 import axios from 'axios';
 
@@ -15,12 +14,12 @@ export default function Login() {
   const [checked, setChecked] = React.useState(false);
   const [ email, setEmail ] =  React.useState('')
   const [ password, setPassword ] =  React.useState('')
-  const { onLogin, onRegister } = useAuth()
+  const { onLogin, onRegister, authState } = useAuth()
+  console.log('AUTH_STATE_LOGIN_SCREEN: ', authState)
 
   React.useEffect(() => {
     const testCall = async () => {
-      const result = await axios.get(`${API_URL}/users`)
-      console.log('allREsults :', result)
+      const result = await axios.get(`${API_URL}/products`)
     }
     testCall()
   }, [])
@@ -30,16 +29,6 @@ export default function Login() {
 
     if (result && result.error) {
       alert(result.msg)
-    }
-  }
-
-  const register = async () => {
-    const result = await onRegister(email, password)
-
-    if (result && result.error) {
-      alert(result.msg)
-    } else {
-      login()
     }
   }
 
@@ -55,11 +44,13 @@ export default function Login() {
       />
       <TextInput
         style={styles.input}
+        value={email}
         label="Email"
         onChangeText={(text) => setEmail(text)}
       />
       <TextInput
         style={styles.input}
+        value={password}
         label="Password"
         onChangeText={(text) => setPassword(text)}
         secureTextEntry

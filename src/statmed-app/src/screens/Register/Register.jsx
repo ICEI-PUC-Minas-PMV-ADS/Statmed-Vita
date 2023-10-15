@@ -15,22 +15,11 @@ export default function Register() {
   const [ email, setEmail ] =  React.useState('')
   const [ password, setPassword ] =  React.useState('')
   const { onLogin, onRegister } = useAuth()
-
-  const login = async () => {
-    const result = await onLogin(email, password)
-
-    if (result && result.error) {
-      alert(result.msg)
-    }
-  }
-
   const register = async () => {
     const result = await onRegister(email, password)
-
+    alert('Usuario registrado com sucesso!')
     if (result && result.error) {
       alert(result.msg)
-    } else {
-      login()
     }
   }
   return (
@@ -53,6 +42,7 @@ export default function Register() {
         <TextInput
           style={styles.input}
           label="Password"
+          value={password}
           secureTextEntry
           onChangeText={(text) => setPassword(text)}
           right={<TextInput.Icon icon="eye" />}
@@ -76,6 +66,7 @@ export default function Register() {
         /> */}
         <TextInput
           style={styles.input}
+          value={email}
           label="Email"
           onChangeText={(text) => setEmail(text)}
           right={<TextInput.Icon icon="at" />}

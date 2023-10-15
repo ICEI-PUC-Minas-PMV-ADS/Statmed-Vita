@@ -17,14 +17,22 @@ import Register from './src/screens/Register';
 import { AuthProvider, useAuth } from './src/context/AuthContext';
 
 export default function App() {
-  const Tab = createMaterialBottomTabNavigator();
-  const { authState, onLogout } = useAuth()
-
   return (
     <AuthProvider>
+      <Layout></Layout>
+    </AuthProvider>
+  );
+}
+
+function Layout() {
+  const Tab = createMaterialBottomTabNavigator();
+  const { authState, onLogout } = useAuth()
+  console.log('AUTH_STATE: ', authState?.authenticated)
+  console.log('ON_LOGOUT: ', onLogout)
+  return (
       <PaperProvider theme={theme}>
         <NavigationContainer>
-          <Tab.Navigator initialRouteName='Home'>
+          <Tab.Navigator>
             { authState?.authenticated ? 
               (
                 <>
@@ -73,7 +81,6 @@ export default function App() {
           </Tab.Navigator>
         </NavigationContainer>
       </PaperProvider>
-    </AuthProvider>
   );
 }
 

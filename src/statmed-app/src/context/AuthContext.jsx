@@ -4,7 +4,7 @@ import * as SecureStore from 'expo-secure-store'
 
 const TOKEN_KEY = 'my-jwt';
 
-export const API_URL = 'https://api.developbetterapps.com'
+export const API_URL = 'http://localhost:3000'
 const AuthContext = createContext({})
 
 export const useAuth = () => {
@@ -19,10 +19,11 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const loadToken = async () => {
-      const token = await SecureStore.getItemAsync(TOKEN_KEY)
+      // const token = await SecureStore.getItemAsync(TOKEN_KEY)
+      const token = sessionStorage.getItem(TOKEN_KEY)
       console.log('stored: ', token)
       if (token) {
-        axios.defaults.headers.common['Authorization'] = `Bearer ${result.data.token}`
+        axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
 
         setAuthState({
           token: token,
@@ -35,7 +36,7 @@ export const AuthProvider = ({ children }) => {
 
   const register = async (email, password) => {
     try {
-      return await axios.post(`${API_URL}/users`, { email, password })
+      return await axios.post(`${API_URL}/auth/register`, { email, password })
     } catch (err) {
       return {
         error: true,
@@ -46,21 +47,24 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const result = await axios.post(`${API_URL}/auth`, { email, password })
+      const result = await axios.post(`${API_URL}/auth/login`, { email, password })
       console.log('AuthContext', result)
 
       setAuthState({
-        token: result.data.token,
+        token: result.data.access_token,
         authenticated: true
       })
 
-      axios.defaults.headers.common['Authorization'] = `Bearer ${result.data.token}`
+      console.log('LOGIN_AUTH_STATE: ', authState)
 
-      await SecureStore.setItemAsync(TOKEN_KEY, result.data.token)
+      axios.defaults.headers.common['Authorization'] = `Bearer ${result.data.access_token}`
+
+      await sessionStorage.setItem(TOKEN_KEY, result.data.access_token)
 
       return result;
 
     } catch (err) {
+      console.log('err: ', err)
       return {
         error: true,
         msg: err.response.data.msg
@@ -70,7 +74,7 @@ export const AuthProvider = ({ children }) => {
 
   const logout = async (email, password) => {
     // Delete token from storage
-    await SecureStore.deleteItemAsync(TOKEN_KEY)
+    await sessionStorage.removeItem(TOKEN_KEY)
 
     // Update HTTP Headers
     axios.defaults.headers.common['Authorization'] = ''
@@ -86,7 +90,7 @@ export const AuthProvider = ({ children }) => {
     onRegister: register,
     onLogin: login,
     onLogout: logout,
-    authState: authState
+    authState
   }
 
   return <AuthContext.Provider value={value}>{ children }</AuthContext.Provider>
