@@ -6,12 +6,22 @@ import styles from './styles';
 import { Button } from 'react-native-paper';
 import StatmedVitaLogo from '../../../assets/statmedvita-logo.png'
 import { Checkbox } from 'react-native-paper';
+import { useAuth } from '../../context/AuthContext';
 
 const blurhash = '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
 
 export default function Register() {
   const [checked, setChecked] = React.useState(false);
-
+  const [ email, setEmail ] =  React.useState('')
+  const [ password, setPassword ] =  React.useState('')
+  const { onLogin, onRegister } = useAuth()
+  const register = async () => {
+    const result = await onRegister(email, password)
+    alert('Usuario registrado com sucesso!')
+    if (result && result.error) {
+      alert(result.msg)
+    }
+  }
   return (
     <View style={{ flex: 1, justifyContent: 'center', marginHorizontal: 30, marginVertical: 30 }}>
       <ScrollView>
@@ -27,41 +37,42 @@ export default function Register() {
         <TextInput
           style={styles.input}
           label="Name"
-          secureTextEntry
           right={<TextInput.Icon icon="account-circle-outline" />}
         />
         <TextInput
           style={styles.input}
           label="Password"
+          value={password}
           secureTextEntry
+          onChangeText={(text) => setPassword(text)}
           right={<TextInput.Icon icon="eye" />}
         />
-        <TextInput
+        {/* <TextInput
           style={styles.input}
-          label="Password"
+          label="Repeat Password"
           secureTextEntry
+          onChangeText={(text) => setPassword(text)}
           right={<TextInput.Icon icon="eye" />}
-        />
+        /> */}
         <TextInput
           style={styles.input}
           label="CPF"
-          secureTextEntry
           right={<TextInput.Icon icon="card-account-details-outline" />}
         />
-        <TextInput
+        {/* <TextInput
           style={styles.input}
           label="Birthdate"
-          secureTextEntry
           right={<TextInput.Icon icon="calendar" />}
-        />
+        /> */}
         <TextInput
           style={styles.input}
+          value={email}
           label="Email"
-          secureTextEntry
+          onChangeText={(text) => setEmail(text)}
           right={<TextInput.Icon icon="at" />}
         />
       </View>
-      <Button style={styles.button} uppercase icon="exit-to-app" mode="contained" onPress={() => console.log('Pressed')}>
+      <Button style={styles.button} uppercase icon="exit-to-app" mode="contained" onPress={register}>
         Registrar
       </Button>
       <View>
