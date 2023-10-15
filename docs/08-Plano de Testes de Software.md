@@ -10,6 +10,8 @@
 |T-006|Exibição de horários de consultas disponíveis|Em desenvolvimento|RF-006|
 |T-007|Verifiação do status de cancelamento de consultas pelo recepcionista|Em desenvolvimento|RF-007|
 |T-008|Verifiação do status de Login|Paciente consegue efetuar o login |RF-008|
+|T-009|Cadastro do paciente no app |Paciente consegue efetuar o cadastro |RF-008|
+
 
 
 
