@@ -3,6 +3,7 @@
 |Teste|Descrição|Resultado|Requisito referência|
 |-----------|------------|----------------|-----------------------|
 |T-008|Verifiação do status de Login|Sem erros apresentados durante os testes|RF-008|.
+|T-009|Cadastro do paciente no app |Cadastro bem sucedido |RF-008|
 
 ## Avaliação
 
