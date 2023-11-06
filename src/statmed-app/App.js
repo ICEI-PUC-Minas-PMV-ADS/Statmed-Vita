@@ -31,26 +31,26 @@ function Layout() {
   console.log('ON_LOGOUT: ', onLogout)
   return (
       <PaperProvider theme={theme}>
-        <NavigationContainer>
+        <NavigationContainer> 
           <Tab.Navigator>
-            { authState?.authenticated ? 
+            { true ? 
               (
                 <>
-                  <Tab.Screen
-                    name="Home"
-                    component={Home}
-                    options={{
-                      tabBarIcon: ({ color }) => (
-                        <MaterialCommunityIcons name="home" color={color} size={26} />
-                      ),
-                    }}
-                  />
                   <Tab.Screen
                     name="HospitalHistory"
                     component={HospitalHistory}
                     options={{
                       tabBarIcon: ({ color }) => (
                         <MaterialCommunityIcons name="cog" color={color} size={26} />
+                      ),
+                    }}
+                  />
+                  <Tab.Screen
+                    name="Home"
+                    component={Home}
+                    options={{
+                      tabBarIcon: ({ color }) => (
+                        <MaterialCommunityIcons name="home" color={color} size={26} />
                       ),
                     }}
                   />
