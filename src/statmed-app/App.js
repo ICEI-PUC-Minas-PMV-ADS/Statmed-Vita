@@ -12,6 +12,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 
 import Home from './src/screens/Home';
 import HospitalHistory from './src/screens/HospitalHistory';
+import MyHealth from './src/screens/MyHealth';
 import Login from './src/screens/Login';
 import Register from './src/screens/Register';
 import { AuthProvider, useAuth } from './src/context/AuthContext';
@@ -36,6 +37,15 @@ function Layout() {
             { true ? 
               (
                 <>
+                  <Tab.Screen
+                    name="MyHealth"
+                    component={MyHealth}
+                    options={{
+                      tabBarIcon: ({ color }) => (
+                        <MaterialCommunityIcons name="home" color={color} size={26} />
+                      ),
+                    }}
+                  />
                   <Tab.Screen
                     name="HospitalHistory"
                     component={HospitalHistory}
