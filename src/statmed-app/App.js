@@ -15,8 +15,9 @@ import HospitalHistory from './src/screens/HospitalHistory';
 import MyHealth from './src/screens/MyHealth';
 import Login from './src/screens/Login';
 import Register from './src/screens/Register';
-import MedicalConsulations from './src/screens/MedicalConsulations';
+import MedicalConsultations from './src/screens/MedicalConsultations';
 import InfoConsulta from './src/screens/InfoConsulta';
+import AgendarConsulta from './src/screens/AgendarConsulta';
 import { AuthProvider, useAuth } from './src/context/AuthContext';
 
 export default function App() {
@@ -40,6 +41,24 @@ function Layout() {
               (
                 <>
                   <Tab.Screen
+                    name="AgendarConsulta"
+                    component={AgendarConsulta}
+                    options={{
+                      tabBarIcon: ({ color }) => (
+                        <MaterialCommunityIcons name="home" color={color} size={26} />
+                      ),
+                    }}
+                  />
+                  <Tab.Screen
+                    name="Consultas"
+                    component={MedicalConsultations}
+                    options={{
+                      tabBarIcon: ({ color }) => (
+                        <MaterialCommunityIcons name="clock-edit-outline" color={color} size={26} />
+                      ),
+                    }}
+                  />
+                  <Tab.Screen
                     name="InfoConsulta"
                     component={InfoConsulta}
                     options={{
@@ -49,20 +68,11 @@ function Layout() {
                     }}
                   />
                   <Tab.Screen
-                    name="MedicalConsulations"
-                    component={MedicalConsulations}
-                    options={{
-                      tabBarIcon: ({ color }) => (
-                        <MaterialCommunityIcons name="home" color={color} size={26} />
-                      ),
-                    }}
-                  />
-                  <Tab.Screen
-                    name="MyHealth"
+                    name="Minha Saude"
                     component={MyHealth}
                     options={{
                       tabBarIcon: ({ color }) => (
-                        <MaterialCommunityIcons name="home" color={color} size={26} />
+                        <MaterialCommunityIcons name="pill" color={color} size={26} />
                       ),
                     }}
                   />
