@@ -15,7 +15,8 @@ import HospitalHistory from './src/screens/HospitalHistory';
 import MyHealth from './src/screens/MyHealth';
 import Login from './src/screens/Login';
 import Register from './src/screens/Register';
-import MedicalConsulations from './src/screens/MedicalConsulations/MedicalConsulations';
+import MedicalConsulations from './src/screens/MedicalConsulations';
+import InfoConsulta from './src/screens/InfoConsulta';
 import { AuthProvider, useAuth } from './src/context/AuthContext';
 
 export default function App() {
@@ -38,6 +39,15 @@ function Layout() {
             { true ? 
               (
                 <>
+                  <Tab.Screen
+                    name="InfoConsulta"
+                    component={InfoConsulta}
+                    options={{
+                      tabBarIcon: ({ color }) => (
+                        <MaterialCommunityIcons name="home" color={color} size={26} />
+                      ),
+                    }}
+                  />
                   <Tab.Screen
                     name="MedicalConsulations"
                     component={MedicalConsulations}
