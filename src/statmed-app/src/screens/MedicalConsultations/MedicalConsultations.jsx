@@ -9,7 +9,7 @@ import data from './assets/data/data.json'
 const blurhash = '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
 import { checkIndexIsEven } from '../../utils';
 
-export default function MedicalConsulations() {
+export default function MedicalConsultations() {
   const { onLogout } = useAuth()
 
   const screen = Dimensions.get('window')
