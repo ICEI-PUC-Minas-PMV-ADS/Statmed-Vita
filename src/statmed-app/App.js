@@ -37,7 +37,7 @@ function Layout() {
       <PaperProvider theme={theme}>
         <NavigationContainer> 
           <Tab.Navigator>
-            { true ? 
+            { authState?.authenticated ? 
               (
                 <>
                   <Tab.Screen

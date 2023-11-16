@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Button } from 'react-native-paper';
+import axios from "axios";
 import { View, ScrollView, Image, Dimensions, StyleSheet, Text } from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Appbar } from 'react-native-paper';
@@ -9,11 +10,32 @@ import data from './assets/data/data.json'
 const blurhash = '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
 import { checkIndexIsEven } from '../../utils';
 
-export default function MedicalConsultations() {
+export default function MedicalConsultations({ navigation }) {
   const { onLogout } = useAuth()
+  const [ anteriores, setAnteriores ] = React.useState(null)
+  const [ proximas, setProximas ] = React.useState(null)
 
   const screen = Dimensions.get('window')
 
+  const [ userData, setUserData ] = React.useState(null)
+  React.useEffect(() => {
+    const id = sessionStorage.getItem('userid')
+
+    const testCall = async () => {
+      console.log('req')
+      const result = await axios.get(`http://localhost:3000/paciente?id=${id}`)
+      setUserData(result.data[0])
+    }
+    testCall()
+  }, [])
+
+  React.useEffect(() => {
+    console.log(userData)
+    if (userData) {
+      setAnteriores(userData.consultaant)
+      setProximas(userData.consultaprox)
+    }
+  }, [ userData ])
 
   return (
     <View style={{ flex: 1 }}>
@@ -33,9 +55,14 @@ export default function MedicalConsultations() {
             <DataTable.Header style={table.tableHeader}>
               <DataTable.Title textStyle={{color: '#DCDCDC', fontWeight: 700}} style={[{ justifyContent: 'center' }, table.tableTitle]}>PRÓXIMAS</DataTable.Title>
             </DataTable.Header>
-            {data.map(( history, index ) => (
-              <DataTable.Row style={[{ backgroundColor: checkIndexIsEven(index) ? '#36393E80' : '' },table.tableRow]}> 
-                <DataTable.Cell textStyle={{color: '#DCDCDC'}} style={{ marginHorizontal: 8 }}>Dr. Bernardo Jeunoun - Urologia <Text style={table.pillDays}>15/11/2023</Text><Text style={[ {marginLeft: 8 } ,table.pillDays]}>15:00</Text></DataTable.Cell>
+            {proximas && proximas.map(( consulta, index ) => (
+              <DataTable.Row
+                style={[{ backgroundColor: checkIndexIsEven(index) ? '#36393E80' : '' },table.tableRow]}
+                onPress={() => {
+                  navigation.navigate('InfoConsulta', { consulta })
+                }}
+              >
+                <DataTable.Cell textStyle={{color: '#DCDCDC'}} style={{ marginHorizontal: 8 }}>{consulta.especialidade} <Text style={table.pillDays}>{consulta.data}</Text> <Text style={[ {marginLeft: 8 } ,table.pillDays]}>{consulta.horario}</Text></DataTable.Cell>
               </DataTable.Row> 
             ))}
           </DataTable>
@@ -44,9 +71,15 @@ export default function MedicalConsultations() {
             <DataTable.Header style={table.tableHeader}>
               <DataTable.Title textStyle={{color: '#DCDCDC', fontWeight: 700}} style={[{ justifyContent: 'center' }, table.tableTitle]}>ANTERIORES</DataTable.Title>
             </DataTable.Header>
-            {data.map(( history, index ) => (
+            {anteriores && anteriores.map(( consulta, index ) => (
               <DataTable.Row style={[{ backgroundColor: checkIndexIsEven(index) ? '#36393E80' : '' },table.tableRow]}> 
-                <DataTable.Cell textStyle={{color: '#DCDCDC'}} style={{ marginHorizontal: 8 }}>Dr. Manoel Gomes - Psquiatra <Text style={table.pillDays}>24/08/2023</Text></DataTable.Cell>
+                <DataTable.Cell
+                  textStyle={{color: '#DCDCDC'}}
+                  style={{ marginHorizontal: 8 }}
+                  onPress={() => {
+                    navigation.navigate('InfoConsulta', { consulta })
+                  }}  
+                >{consulta.especialidade} <Text style={table.pillDays}>{consulta.data}</Text> <Text style={[ {marginLeft: 8 } ,table.pillDays]}>{consulta.horario}</Text></DataTable.Cell>
               </DataTable.Row> 
             ))}
           </DataTable>
@@ -58,7 +91,8 @@ export default function MedicalConsultations() {
               uppercase
               style={{ borderRadius: 8, width: '100%' }}
               labelStyle={{ fontWeight: 400 }}
-              onPress={() => console.log('Pressed')}>
+              onPress={() => console.log('Pressed')}
+            >
               NOVA CONSULTA
             </Button>
           </View>
