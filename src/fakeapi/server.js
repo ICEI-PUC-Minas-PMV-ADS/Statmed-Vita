@@ -24,7 +24,7 @@ function verifyToken(token){
 }
 
 function isAuthenticated({cpf, senha}){
-  return userdb.users.findIndex(user => user.cpf === cpf && user.senha === senha) !== -1
+  return userdb.users.find(user => (user.cpf === cpf && user.senha === senha) !== -1)
 }
 
 server.post('/auth/registrar', (req, res) => {
@@ -71,6 +71,7 @@ server.post('/auth/login', (req, res) => {
   console.log("Requisição de login:");
   console.log(req.body);
   const {cpf, senha} = req.body;
+
   if (isAuthenticated({cpf, senha}) === false) {
     const status = 401
     const message = 'E-mail ou senha incorreto'
@@ -79,7 +80,7 @@ server.post('/auth/login', (req, res) => {
   }
   const access_token = createToken({cpf, senha})
   console.log("Access Token:" + access_token);
-  res.status(200).json({access_token})
+  res.status(200).json({access_token, user: isAuthenticated({cpf, senha})})
 })
 
 server.use(/^(?!\/auth).*$/,  (req, res, next) => {

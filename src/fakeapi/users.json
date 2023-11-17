@@ -1,14 +1,1 @@
-{
-    "users": [
-        {
-            "id": 0,
-            "cpf": "242.969.420-99",
-            "senha": "guigui24mm"
-        },
-        {
-            "id": 1,
-            "cpf": "787.500.250-45",
-            "senha": "jardelzinthecria"
-        }
-    ]
-}
+{"users":[{"id":0,"cpf":"242.969.420-99","senha":"guigui24mm"},{"id":1,"cpf":"787.500.250-45","senha":"jardelzinthecria"},{"id":2,"cpf":"221213121312","senha":"172362"}]}
