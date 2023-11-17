@@ -34,9 +34,9 @@ export const AuthProvider = ({ children }) => {
     loadToken()
   }, [])
 
-  const register = async (email, password) => {
+  const register = async (cpf, password) => {
     try {
-      return await axios.post(`${API_URL}/auth/register`, { email, password })
+      return await axios.post(`http://localhost:3030/auth/registrar`, { cpf, senha: password })
     } catch (err) {
       return {
         error: true,
@@ -47,7 +47,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const result = await axios.post(`${API_URL}/auth/login`, { email, password })
+      const result = await axios.post(`http://localhost:3030/auth/login`, { cpf: email, senha: password })
       console.log('AuthContext', result)
 
       setAuthState({
@@ -60,6 +60,7 @@ export const AuthProvider = ({ children }) => {
       axios.defaults.headers.common['Authorization'] = `Bearer ${result.data.access_token}`
 
       await sessionStorage.setItem(TOKEN_KEY, result.data.access_token)
+      await sessionStorage.setItem('userid', result.data.user.id)
 
       return result;
 
@@ -75,6 +76,7 @@ export const AuthProvider = ({ children }) => {
   const logout = async (email, password) => {
     // Delete token from storage
     await sessionStorage.removeItem(TOKEN_KEY)
+    await sessionStorage.removeItem('userid')
 
     // Update HTTP Headers
     axios.defaults.headers.common['Authorization'] = ''

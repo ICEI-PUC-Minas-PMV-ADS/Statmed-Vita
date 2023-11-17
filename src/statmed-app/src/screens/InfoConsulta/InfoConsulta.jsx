@@ -3,30 +3,44 @@ import { View, ScrollView, Image, Dimensions, StyleSheet, Text } from 'react-nat
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Appbar } from 'react-native-paper';
 import { useAuth } from '../../context/AuthContext';
+import axios from "axios";
 import data from './assets/data/data.json'
 const blurhash = '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
 import ManoelGomesInfoConsulta from '../../../assets/manoel-gomes-info-consulta.png'
 
-export default function InfoConsulta() {
+export default function InfoConsulta({ route, navigation }) {
   const { onLogout } = useAuth()
 
-  const screen = Dimensions.get('window')
+  console.log('ROUTE_INFO: ', route.params.consulta)
 
+  const { atestado, data, encaminhamento, especialidade, horario, medico } = route.params.consulta
+
+  const screen = Dimensions.get('window')
+  const [ userData, setUserData ] = React.useState(null)
+  React.useEffect(() => {
+    const id = sessionStorage.getItem('userid')
+
+    const testCall = async () => {
+      console.log('req')
+      const result = await axios.get(`http://localhost:3000/paciente?id=${id}`)
+      setUserData(result)
+    }
+    testCall()
+  }, [])
+
+  React.useEffect(() => {
+  console.log('USER_DATA: ', userData)
+  }, [ userData ])
 
   return (
     <View style={{ flex: 1 }}>
       <ScrollView>
-        <Appbar.Header>
-          <Appbar.BackAction onPress={() => {}} />
-          <Appbar.Content title="Inicio" />
-          <Appbar.Action icon="logout" onPress={onLogout} />
-        </Appbar.Header>
         <View style={{ backgroundColor: '#23272A', width: '100%', minHeight: screen.height, padding: 24 }}>
-          <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' ,marginBottom: 12 }}>
+          <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginBottom: 12 }}>
             <MaterialCommunityIcons name="archive-outline" color='#00C975' size={26} />
             <Text style={{ color: '#FFF', marginLeft: 8, fontSize: 24, fontWeight: 400 }}>HISTÓRICO</Text>
           </View>
-          <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' ,marginBottom: 12 }}>
+          <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginBottom: 12 }}>
             <View style={{ borderColor: '#36393E', borderWidth: 1, borderRadius: 6, width: '100%' }}>
               <View style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', borderBottomColor: '#36393E', borderWidth: 1, borderTopWidth: 0, borderLeftWidth: 0, borderRightWidth: 0 }}>
                 <Text style={{ fontSize: 16, lineHeight: 20, color: '#DCDCDC', fontWeight: 600, paddingVertical: 8 }}>INFORMAÇÕES DA CONSULTA</Text>
@@ -46,11 +60,11 @@ export default function InfoConsulta() {
                   <View style={{ marginLeft: 16 }}>
                     <View style={{ display: 'flex', marginBottom: 16 }}>
                       <Text style={{ fontSize: 16, lineHeight: 20, color: '#DCDCDC', fontWeight: 600 }}>MEDICO</Text>
-                      <Text style={{ fontSize: 12, lineHeight: 20, color: '#DCDCDC' }}>Dr. Manoel Gomes</Text>
+                      <Text style={{ fontSize: 12, lineHeight: 20, color: '#DCDCDC' }}>{medico}</Text>
                     </View>
                     <View style={{ display: 'flex' }}>
                       <Text style={{ fontSize: 16, lineHeight: 20, color: '#DCDCDC', fontWeight: 600 }}>ESPECIALIDADE</Text>
-                      <Text style={{ fontSize: 12, lineHeight: 20, color: '#DCDCDC' }}>Psiquiatria</Text>
+                      <Text style={{ fontSize: 12, lineHeight: 20, color: '#DCDCDC' }}>{especialidade}</Text>
                     </View>
                   </View>
                 </View>
@@ -58,19 +72,19 @@ export default function InfoConsulta() {
                   <View>
                     <View style={{ display: 'flex', alignItems: 'center', marginBottom: 16 }}>
                       <Text style={{ fontSize: 16, lineHeight: 20, color: '#DCDCDC', fontWeight: 600 }}>DATA</Text>
-                      <Text style={{ fontSize: 12, lineHeight: 20, color: '#DCDCDC' }}>24/08/23</Text>
+                      <Text style={{ fontSize: 12, lineHeight: 20, color: '#DCDCDC' }}>{data} - {horario}</Text>
                     </View>
                   </View>
                   <View style={{ marginLeft: 16 }}>
                     <View style={{ display: 'flex', alignItems: 'center', marginBottom: 16 }}>
                       <Text style={{ fontSize: 16, lineHeight: 20, color: '#DCDCDC', fontWeight: 600 }}>ATESTADO</Text>
-                      <Text style={{ fontSize: 12, lineHeight: 20, color: '#DCDCDC' }}>Sim</Text>
+                      <Text style={{ fontSize: 12, lineHeight: 20, color: '#DCDCDC' }}>{atestado}</Text>
                     </View>
                   </View>
                   <View style={{ marginLeft: 16 }}>
                     <View style={{ display: 'flex', alignItems: 'center', marginBottom: 16 }}>
                       <Text style={{ fontSize: 16, lineHeight: 20, color: '#DCDCDC', fontWeight: 600 }}>ENCAMINHAMENTO</Text>
-                      <Text style={{ fontSize: 12, lineHeight: 20, color: '#DCDCDC' }}>Não</Text>
+                      <Text style={{ fontSize: 12, lineHeight: 20, color: '#DCDCDC' }}>{encaminhamento}</Text>
                     </View>
                   </View>
                 </View>

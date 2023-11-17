@@ -19,6 +19,8 @@ import MedicalConsultations from './src/screens/MedicalConsultations';
 import InfoConsulta from './src/screens/InfoConsulta';
 import AgendarConsulta from './src/screens/AgendarConsulta';
 import { AuthProvider, useAuth } from './src/context/AuthContext';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import TabScreens from './src/navigation/TabScreens';
 
 export default function App() {
   return (
@@ -29,96 +31,25 @@ export default function App() {
 }
 
 function Layout() {
-  const Tab = createMaterialBottomTabNavigator();
+  const Tab = createMaterialBottomTabNavigator()
+  const StackNavigator = createNativeStackNavigator();
   const { authState, onLogout } = useAuth()
   console.log('AUTH_STATE: ', authState?.authenticated)
   console.log('ON_LOGOUT: ', onLogout)
   return (
       <PaperProvider theme={theme}>
         <NavigationContainer> 
-          <Tab.Navigator>
-            { true ? 
-              (
-                <>
-                  <Tab.Screen
-                    name="AgendarConsulta"
-                    component={AgendarConsulta}
-                    options={{
-                      tabBarIcon: ({ color }) => (
-                        <MaterialCommunityIcons name="home" color={color} size={26} />
-                      ),
-                    }}
-                  />
-                  <Tab.Screen
-                    name="Consultas"
-                    component={MedicalConsultations}
-                    options={{
-                      tabBarIcon: ({ color }) => (
-                        <MaterialCommunityIcons name="clock-edit-outline" color={color} size={26} />
-                      ),
-                    }}
-                  />
-                  <Tab.Screen
-                    name="InfoConsulta"
-                    component={InfoConsulta}
-                    options={{
-                      tabBarIcon: ({ color }) => (
-                        <MaterialCommunityIcons name="home" color={color} size={26} />
-                      ),
-                    }}
-                  />
-                  <Tab.Screen
-                    name="Minha Saude"
-                    component={MyHealth}
-                    options={{
-                      tabBarIcon: ({ color }) => (
-                        <MaterialCommunityIcons name="pill" color={color} size={26} />
-                      ),
-                    }}
-                  />
-                  <Tab.Screen
-                    name="HospitalHistory"
-                    component={HospitalHistory}
-                    options={{
-                      tabBarIcon: ({ color }) => (
-                        <MaterialCommunityIcons name="cog" color={color} size={26} />
-                      ),
-                    }}
-                  />
-                  <Tab.Screen
-                    name="Home"
-                    component={Home}
-                    options={{
-                      tabBarIcon: ({ color }) => (
-                        <MaterialCommunityIcons name="home" color={color} size={26} />
-                      ),
-                    }}
-                  />
-                </>
-              )
-            : (
-                <>
-                  <Tab.Screen
-                    name="Login"
-                    component={Login}
-                    options={{
-                      tabBarIcon: ({ color }) => (
-                        <MaterialCommunityIcons name="home" color={color} size={26} />
-                      ),
-                    }}
-                  />
-                  <Tab.Screen
-                    name="Register"
-                    component={Register}
-                    options={{
-                      tabBarIcon: ({ color }) => (
-                        <MaterialCommunityIcons name="home" color={color} size={26} />
-                      ),
-                    }}
-                  />
-                </>
-              )}
-          </Tab.Navigator>
+          <StackNavigator.Navigator screenOptions={{ headerTintColor: '#161616' ,headerStyle: { backgroundColor: '#36393E' } }}>
+          <StackNavigator.Screen component={TabScreens} name="bottomTabBar" options={{ unmountOnBlur: true, headerShown: false }} />
+          <StackNavigator.Screen
+            component={InfoConsulta}
+            name="Informações Consulta"
+          />
+          <StackNavigator.Screen
+            component={AgendarConsulta}
+            name="Agendar Consulta"
+          />
+          </StackNavigator.Navigator>
         </NavigationContainer>
       </PaperProvider>
   );

@@ -13,10 +13,11 @@ const blurhash = '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWX
 export default function Register() {
   const [checked, setChecked] = React.useState(false);
   const [ email, setEmail ] =  React.useState('')
+  const [ cpf, setCPF ] =  React.useState('')
   const [ password, setPassword ] =  React.useState('')
   const { onLogin, onRegister } = useAuth()
   const register = async () => {
-    const result = await onRegister(email, password)
+    const result = await onRegister(cpf, password)
     alert('Usuario registrado com sucesso!')
     if (result && result.error) {
       alert(result.msg)
@@ -56,7 +57,9 @@ export default function Register() {
         /> */}
         <TextInput
           style={styles.input}
+          value={cpf}
           label="CPF"
+          onChangeText={(text) => setCPF(text)}
           right={<TextInput.Icon icon="card-account-details-outline" />}
         />
         {/* <TextInput

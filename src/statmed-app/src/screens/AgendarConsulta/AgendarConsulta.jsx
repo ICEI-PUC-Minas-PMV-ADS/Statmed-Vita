@@ -56,12 +56,7 @@ export default function AgendarConsulta() {
 
   return (
     <>
-      <Appbar.Header style={{ backgroundColor: '#36393E' }}>
-        <Appbar.BackAction onPress={() => {}} />
-        <Appbar.Content title="Inicio" />
-        <Appbar.Action icon="logout" onPress={onLogout} />
-      </Appbar.Header>
-      <View style={{ flex: 1, marginHorizontal: 30, paddingTop: 12 }}>
+      <View style={{ flex: 1, paddingHorizontal: 30, paddingTop: 12, backgroundColor: '#23272A' }}>
         <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' ,marginBottom: 12 }}>
           <MaterialCommunityIcons name="clock-edit-outline" color='#00C975' size={26} />
           <Text style={{ color: '#FFF', marginLeft: 8, fontSize: 24, fontWeight: 400 }}>AGENDAR CONSULTA</Text>
