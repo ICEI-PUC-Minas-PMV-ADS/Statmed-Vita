@@ -35,17 +35,12 @@ export default function InfoConsulta({ route, navigation }) {
   return (
     <View style={{ flex: 1 }}>
       <ScrollView>
-        <Appbar.Header>
-          <Appbar.BackAction onPress={() => {}} />
-          <Appbar.Content title="Inicio" />
-          <Appbar.Action icon="logout" onPress={onLogout} />
-        </Appbar.Header>
         <View style={{ backgroundColor: '#23272A', width: '100%', minHeight: screen.height, padding: 24 }}>
-          <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' ,marginBottom: 12 }}>
+          <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginBottom: 12 }}>
             <MaterialCommunityIcons name="archive-outline" color='#00C975' size={26} />
             <Text style={{ color: '#FFF', marginLeft: 8, fontSize: 24, fontWeight: 400 }}>HISTÓRICO</Text>
           </View>
-          <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' ,marginBottom: 12 }}>
+          <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginBottom: 12 }}>
             <View style={{ borderColor: '#36393E', borderWidth: 1, borderRadius: 6, width: '100%' }}>
               <View style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', borderBottomColor: '#36393E', borderWidth: 1, borderTopWidth: 0, borderLeftWidth: 0, borderRightWidth: 0 }}>
                 <Text style={{ fontSize: 16, lineHeight: 20, color: '#DCDCDC', fontWeight: 600, paddingVertical: 8 }}>INFORMAÇÕES DA CONSULTA</Text>

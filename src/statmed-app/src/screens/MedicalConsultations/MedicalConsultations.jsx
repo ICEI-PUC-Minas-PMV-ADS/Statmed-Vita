@@ -59,7 +59,7 @@ export default function MedicalConsultations({ navigation }) {
               <DataTable.Row
                 style={[{ backgroundColor: checkIndexIsEven(index) ? '#36393E80' : '' },table.tableRow]}
                 onPress={() => {
-                  navigation.navigate('InfoConsulta', { consulta })
+                  navigation.navigate('Informações Consulta', { consulta })
                 }}
               >
                 <DataTable.Cell textStyle={{color: '#DCDCDC'}} style={{ marginHorizontal: 8 }}>{consulta.especialidade} <Text style={table.pillDays}>{consulta.data}</Text> <Text style={[ {marginLeft: 8 } ,table.pillDays]}>{consulta.horario}</Text></DataTable.Cell>
@@ -77,7 +77,7 @@ export default function MedicalConsultations({ navigation }) {
                   textStyle={{color: '#DCDCDC'}}
                   style={{ marginHorizontal: 8 }}
                   onPress={() => {
-                    navigation.navigate('InfoConsulta', { consulta })
+                    navigation.navigate('Informações Consulta', { consulta })
                   }}  
                 >{consulta.especialidade} <Text style={table.pillDays}>{consulta.data}</Text> <Text style={[ {marginLeft: 8 } ,table.pillDays]}>{consulta.horario}</Text></DataTable.Cell>
               </DataTable.Row> 
@@ -91,7 +91,9 @@ export default function MedicalConsultations({ navigation }) {
               uppercase
               style={{ borderRadius: 8, width: '100%' }}
               labelStyle={{ fontWeight: 400 }}
-              onPress={() => console.log('Pressed')}
+              onPress={() => {
+                navigation.navigate('Agendar Consulta')
+              }}
             >
               NOVA CONSULTA
             </Button>
