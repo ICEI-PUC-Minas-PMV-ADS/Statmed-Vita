@@ -17,13 +17,6 @@ export default function Login() {
   const { onLogin, onRegister, authState } = useAuth()
   console.log('AUTH_STATE_LOGIN_SCREEN: ', authState)
 
-  React.useEffect(() => {
-    const testCall = async () => {
-      const result = await axios.get(`${API_URL}/products`)
-    }
-    testCall()
-  }, [])
-
   const login = async () => {
     const result = await onLogin(email, password)
 
