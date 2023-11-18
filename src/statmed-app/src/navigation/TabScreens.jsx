@@ -20,9 +20,7 @@ import { useAuth } from '../context/AuthContext';
 
 export default function TabScreens() {
   const Tab = createMaterialBottomTabNavigator()
-  const { authState, onLogout } = useAuth()
-  console.log('AUTH_STATE: ', authState?.authenticated)
-  console.log('ON_LOGOUT: ', onLogout)
+  const { authState } = useAuth()
   return (
           <Tab.Navigator>
             { authState?.authenticated ? 

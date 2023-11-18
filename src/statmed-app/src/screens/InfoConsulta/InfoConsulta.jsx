@@ -1,18 +1,12 @@
 import * as React from 'react';
 import { View, ScrollView, Image, Dimensions, StyleSheet, Text } from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import { Appbar } from 'react-native-paper';
 import { useAuth } from '../../context/AuthContext';
 import axios from "axios";
-import data from './assets/data/data.json'
 const blurhash = '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
 import ManoelGomesInfoConsulta from '../../../assets/manoel-gomes-info-consulta.png'
 
 export default function InfoConsulta({ route, navigation }) {
-  const { onLogout } = useAuth()
-
-  console.log('ROUTE_INFO: ', route.params.consulta)
-
   const { atestado, data, encaminhamento, especialidade, horario, medico } = route.params.consulta
 
   const screen = Dimensions.get('window')
@@ -21,16 +15,11 @@ export default function InfoConsulta({ route, navigation }) {
     const id = sessionStorage.getItem('userid')
 
     const testCall = async () => {
-      console.log('req')
       const result = await axios.get(`http://localhost:3000/paciente?id=${id}`)
       setUserData(result)
     }
     testCall()
   }, [])
-
-  React.useEffect(() => {
-  console.log('USER_DATA: ', userData)
-  }, [ userData ])
 
   return (
     <View style={{ flex: 1 }}>

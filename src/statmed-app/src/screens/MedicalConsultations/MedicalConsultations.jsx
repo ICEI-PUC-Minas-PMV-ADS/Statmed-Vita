@@ -6,8 +6,6 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import { Appbar } from 'react-native-paper';
 import { useAuth } from '../../context/AuthContext';
 import { DataTable } from 'react-native-paper';
-import data from './assets/data/data.json'
-const blurhash = '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
 import { checkIndexIsEven } from '../../utils';
 
 export default function MedicalConsultations({ navigation }) {
@@ -22,15 +20,17 @@ export default function MedicalConsultations({ navigation }) {
     const id = sessionStorage.getItem('userid')
 
     const testCall = async () => {
-      console.log('req')
-      const result = await axios.get(`http://localhost:3000/paciente?id=${id}`)
-      setUserData(result.data[0])
+      const consultaProx = await axios.get(`http://localhost:3000/consultaprox?pacienteId=${id}`)
+      const consultaAnt = await axios.get(`http://localhost:3000/consultaant?pacienteId=${id}`)
+      setUserData({
+        consultaant: consultaAnt.data,
+        consultaprox: consultaProx.data
+      })
     }
     testCall()
   }, [])
 
   React.useEffect(() => {
-    console.log(userData)
     if (userData) {
       setAnteriores(userData.consultaant)
       setProximas(userData.consultaprox)

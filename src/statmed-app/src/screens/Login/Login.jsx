@@ -5,24 +5,14 @@ import { TextInput } from 'react-native-paper';
 import styles from './styles';
 import { Button } from 'react-native-paper';
 import StatmedVitaLogo from '../../../assets/statmedvita-logo.png'
-import { API_URL, useAuth } from '../../context/AuthContext';
-import axios from 'axios';
+import { useAuth } from '../../context/AuthContext';
 
-const blurhash = '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
 
 export default function Login() {
   const [checked, setChecked] = React.useState(false);
   const [ email, setEmail ] =  React.useState('')
   const [ password, setPassword ] =  React.useState('')
-  const { onLogin, onRegister, authState } = useAuth()
-  console.log('AUTH_STATE_LOGIN_SCREEN: ', authState)
-
-  React.useEffect(() => {
-    const testCall = async () => {
-      const result = await axios.get(`${API_URL}/products`)
-    }
-    testCall()
-  }, [])
+  const { onLogin } = useAuth()
 
   const login = async () => {
     const result = await onLogin(email, password)
