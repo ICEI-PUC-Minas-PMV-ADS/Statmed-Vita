@@ -4,50 +4,55 @@ import { View, Image } from 'react-native';
 import { TextInput } from 'react-native-paper';
 import styles from './styles';
 import { Button, Checkbox } from 'react-native-paper';
-import StatmedVitaLogo from '../../../assets/statmedvita-logo.png'
 import { API_URL, useAuth } from '../../context/AuthContext';
-import axios from 'axios';
 import {SelectList }from 'react-native-dropdown-select-list'
-import { Appbar } from 'react-native-paper';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-const blurhash = '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
+import convenios from './assets/data/convenios.json'
+import medicos from './assets/data/medicos.json'
+import datas from './assets/data/datas.json'
 
-export default function AgendarConsulta() {
-  const data = [
-    {key:'Canada', value:'Canada'},
-    {key:'England', value:'England'},
-    {key:'Pakistan', value:'Pakistan'},
-    {key:'India', value:'India'},
-    {key:'NewZealand', value:'NewZealand'},
-  ]
-  const [open, setOpen] = React.useState(false);
-  const [value, setValue] = React.useState(null);
-  const [selected, setSelected] = React.useState("");
-  const [items, setItems] = React.useState([
-    {label: 'Apple', value: 'apple'},
-    {label: 'Banana', value: 'banana'}
-  ]);
+export default function AgendarConsulta({ navigator }) {
   const [teleconsulta, setTeleconsulta] = React.useState(false);
   const [presencial, setPresencial] = React.useState(false);
   const [acceptTerms, setAcceptTerms] = React.useState(false);
-
+  const [date, setDate] = React.useState(new Date())
   const [ plano, setPlano ] =  React.useState('')
   const [ inscricao, setInscricao ] =  React.useState('')
-  const { onLogin, onRegister, authState } = useAuth()
+  const { authState, onAgendar } = useAuth()
   console.log('AUTH_STATE_LOGIN_SCREEN: ', authState)
 
+  const [medico, setMedico] = React.useState("");
+  const [convenio, setConvenio] = React.useState("");
+  const [data, setData] = React.useState("");
+
   React.useEffect(() => {
-    const testCall = async () => {
-      const result = await axios.get(`${API_URL}/products`)
+    console.log('medico: ', medico)
+    console.log('convenio: ', convenio)
+    console.log('data: ', data)
+
+    const especialidade = medicos.find(( data ) => {
+      return data.value === medico 
+    })
+
+    console.log('especialidade: ', especialidade)
+  }, [medico, convenio, data])
+
+  const agendar = async () => {
+    const id = sessionStorage.getItem('userid')
+    const dataHorario = data.split(' ')
+    const medicoData = medicos.find(( data ) => {
+      return data.value === medico
+    })
+    const consulta = {
+      pacienteId: id,
+      data: dataHorario[0],
+      horario: dataHorario[1],
+      medico: medico,
+      especialidade: medicoData.especialidade,
+      encaminhamento: "Não",
+      atestado: "Sim"
     }
-    testCall()
-  }, [])
-
-  const { onLogout } = useAuth()
-
-
-  const login = async () => {
-    const result = await onLogin(email, password)
+    const result = await onAgendar(consulta)
 
     if (result && result.error) {
       alert(result.msg)
@@ -63,19 +68,8 @@ export default function AgendarConsulta() {
         </View>
         <View style={{ marginBottom: 16 }}>
           <SelectList
-            setSelected={setSelected}
-            data={data}
-            placeholder='Especialidade'
-            boxStyles={{ height: 48, backgroundColor: '#FFF' }}
-            inputStyles={{ fontSize: 16, fontWeight: 600 }}
-            dropdownStyles={{ backgroundColor: '#FFF' }}
-            searchPlaceholder='buscar'
-          />
-        </View>
-        <View style={{ marginBottom: 16 }}>
-          <SelectList
-            setSelected={setSelected}
-            data={data}
+            setSelected={setMedico}
+            data={medicos}
             placeholder='Médico(a)'
             boxStyles={{ height: 48, backgroundColor: '#FFF' }}
             inputStyles={{ fontSize: 16, fontWeight: 600 }}
@@ -85,8 +79,8 @@ export default function AgendarConsulta() {
         </View>
         <View style={{ marginBottom: 16 }}>
           <SelectList
-            setSelected={setSelected}
-            data={data}
+            setSelected={setData}
+            data={datas}
             placeholder='Data'
             boxStyles={{ height: 48, backgroundColor: '#FFF' }}
             inputStyles={{ fontSize: 16, fontWeight: 600 }}
@@ -96,19 +90,8 @@ export default function AgendarConsulta() {
         </View>
         <View style={{ marginBottom: 16 }}>
           <SelectList
-            setSelected={setSelected}
-            data={data}
-            placeholder='Local'
-            boxStyles={{ height: 48, backgroundColor: '#FFF' }}
-            inputStyles={{ fontSize: 16, fontWeight: 600 }}
-            dropdownStyles={{ backgroundColor: '#FFF' }}
-            searchPlaceholder='buscar'
-          />
-        </View>
-        <View style={{ marginBottom: 16 }}>
-          <SelectList
-            setSelected={setSelected}
-            data={data}
+            setSelected={setConvenio}
+            data={convenios}
             placeholder='Convênio'
             boxStyles={{ height: 48, backgroundColor: '#FFF' }}
             inputStyles={{ fontSize: 16, fontWeight: 600 }}
@@ -170,7 +153,8 @@ export default function AgendarConsulta() {
             disabled={!acceptTerms}
             style={{ borderRadius: 8, width: '100%' }}
             labelStyle={{ fontWeight: 400 }}
-            onPress={() => console.log('Pressed')}>
+            onPress={agendar}
+            >
             AGENDAR
           </Button>
         </View>

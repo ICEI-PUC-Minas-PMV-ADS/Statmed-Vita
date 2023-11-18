@@ -1,0 +1,17 @@
+[
+  { "key": "Dr. José Silva", "value": "Dr. José Silva", "especialidade": "Cardiologia" },
+  { "key": "Dra. Ana Oliveira", "value": "Dra. Ana Oliveira", "especialidade": "Ortopedia" },
+  { "key": "Dr. Carla Mendes", "value": "Dr. Carla Mendes", "especialidade": "Dermatologia" },
+  { "key": "Dra. Luís Santos", "value": "Dra. Luís Santos", "especialidade": "Neurologia" },
+  { "key": "Dr. Maria Costa", "value": "Dr. Maria Costa", "especialidade": "Ginecologia" },
+  { "key": "Dra. Pedro Rocha", "value": "Dra. Pedro Rocha", "especialidade": "Oftalmologia" },
+  { "key": "Dr. Laura Fernandes", "value": "Dr. Laura Fernandes", "especialidade": "Pediatria" },
+  { "key": "Dra. Miguel Almeida", "value": "Dra. Miguel Almeida", "especialidade": "Endocrinologia" },
+  { "key": "Dr. Sofia Lima", "value": "Dr. Sofia Lima", "especialidade": "Psiquiatria" },
+  { "key": "Dra. João Pereira", "value": "Dra. João Pereira", "especialidade": "Oncologia" },
+  { "key": "Dr. Catarina Vieira", "value": "Dr. Catarina Vieira", "especialidade": "Radiologia" },
+  { "key": "Dra. António Santos", "value": "Dra. António Santos", "especialidade": "Urologia" },
+  { "key": "Dr. Marta Silva", "value": "Dr. Marta Silva", "especialidade": "Gastroenterologia" },
+  { "key": "Dra. Francisco Lima", "value": "Dra. Francisco Lima", "especialidade": "Otorrinolaringologia" },
+  { "key": "Dr. Carolina Mendonça", "value": "Dr. Carolina Mendonça", "especialidade": "Hematologia" }
+]

@@ -73,6 +73,22 @@ export const AuthProvider = ({ children }) => {
     }
   }
 
+  const agendar = async (consulta) => {
+    const id = sessionStorage.getItem('userid')
+
+    try {
+      console.log('CONSULTA_SEND: ', consulta)
+      return await axios.post(`http://localhost:3000/consultaprox?pacienteId=${id}/`, consulta)
+    } catch (err) {
+      return {
+        error: true,
+        msg: err.response.data.msg
+      }
+    } finally {
+      navigation.navigate('Consultas')
+    }
+  }
+
   const logout = async (email, password) => {
     // Delete token from storage
     await sessionStorage.removeItem(TOKEN_KEY)
@@ -92,6 +108,7 @@ export const AuthProvider = ({ children }) => {
     onRegister: register,
     onLogin: login,
     onLogout: logout,
+    onAgendar: agendar,
     authState
   }
 
