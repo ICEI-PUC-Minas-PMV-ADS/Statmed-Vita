@@ -6,12 +6,33 @@ import { Appbar } from 'react-native-paper';
 import { useAuth } from '../../context/AuthContext';
 import { DataTable } from 'react-native-paper';
 import data from './assets/data/data.json'
-const blurhash = '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
 import { checkIndexIsEven } from '../../utils';
-export default function MyHealth() {
+import axios from "axios";
+
+export default function MyHealth({ navigation }) {
   const { onLogout } = useAuth()
+  const [ medicamentosList, setMedicamentosList ] = React.useState(null)
+  const [ alergiasList, setAlergiasList ] = React.useState(null)
 
   const screen = Dimensions.get('window')
+
+  React.useEffect(() => {
+    const id = sessionStorage.getItem('userid')
+
+    const testCall = async () => {
+      console.log('call')
+      const medicamentos = await axios.get(`http://localhost:3000/medicamentos?pacienteId=${id}`)
+      setMedicamentosList(medicamentos.data)
+      const alergia = await axios.get(`http://localhost:3000/alergias?pacienteId=${id}`)
+      setAlergiasList(alergia.data)
+    }
+    testCall()
+  }, [])
+
+  React.useEffect(() => {
+    console.log('MEDICAMENTOS: ', medicamentosList)
+    console.log('ALERGIA: ', alergiasList)
+  }, [ medicamentosList, alergiasList ])
 
 
   return (
@@ -32,9 +53,9 @@ export default function MyHealth() {
             <DataTable.Header style={table.tableHeader}>
               <DataTable.Title textStyle={{color: '#DCDCDC', fontWeight: 700}} style={[{ justifyContent: 'center' }, table.tableTitle]}>MINHAS MEDICAÇÕES</DataTable.Title>
             </DataTable.Header>
-            {data.map(( history, index ) => (
+            {medicamentosList && medicamentosList.map(( data, index ) => (
               <DataTable.Row style={[{ backgroundColor: checkIndexIsEven(index) ? '#36393E80' : '' },table.tableRow]}> 
-                <DataTable.Cell textStyle={{color: '#DCDCDC'}} style={{ marginHorizontal: 8 }}>Calcitran <Text style={table.pillDays}>DIÁRIO</Text> <Text style={table.pillHour}>MANHÃ</Text></DataTable.Cell>
+                <DataTable.Cell textStyle={{color: '#DCDCDC'}} style={{ marginHorizontal: 8 }}>{data.medicamentos} { data.periodo.map((periodo) => <Text style={table.pillDays}>{periodo}</Text>)} <Text style={table.pillHour}>{data.horario}</Text></DataTable.Cell>
               </DataTable.Row> 
             ))}
           </DataTable>
@@ -46,7 +67,10 @@ export default function MyHealth() {
               uppercase
               style={{ width: 100, borderRadius: 8 }}
               labelStyle={{ fontWeight: 400 }}
-              onPress={() => console.log('Pressed')}>
+              onPress={() => {
+                navigation.navigate('Registrar Medicamento')
+              }} 
+              >
               NOVO
             </Button>
           </View>
@@ -54,9 +78,9 @@ export default function MyHealth() {
             <DataTable.Header style={table.tableHeader}>
               <DataTable.Title textStyle={{color: '#DCDCDC', fontWeight: 700}} style={[{ justifyContent: 'center' }, table.tableTitle]}>ALERGIAS</DataTable.Title>
             </DataTable.Header>
-            {data.map(( history, index ) => (
+            {alergiasList && alergiasList.map(( alergia, index ) => (
               <DataTable.Row style={[{ backgroundColor: checkIndexIsEven(index) ? '#36393E80' : '' },table.tableRow]}> 
-                <DataTable.Cell textStyle={{color: '#DCDCDC'}} style={{ marginHorizontal: 8 }}></DataTable.Cell>
+                <DataTable.Cell textStyle={{color: '#DCDCDC'}} style={{ marginHorizontal: 8 }}>{alergia.alergia}</DataTable.Cell>
               </DataTable.Row> 
             ))}
           </DataTable>
@@ -68,7 +92,10 @@ export default function MyHealth() {
               uppercase
               style={{ width: 100, borderRadius: 8 }}
               labelStyle={{ fontWeight: 400 }}
-              onPress={() => console.log('Pressed')}>
+              onPress={() => {
+                navigation.navigate('Registrar Alergia')
+              }} 
+            >
               NOVO
             </Button>
           </View>
