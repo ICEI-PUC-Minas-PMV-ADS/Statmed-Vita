@@ -11,7 +11,8 @@ import axios from "axios";
 
 export default function MyHealth({ navigation }) {
   const { onLogout } = useAuth()
-  const [ userData, setUserData ] = React.useState(null)
+  const [ medicamentosList, setMedicamentosList ] = React.useState(null)
+  const [ alergiasList, setAlergiasList ] = React.useState(null)
 
   const screen = Dimensions.get('window')
 
@@ -21,14 +22,17 @@ export default function MyHealth({ navigation }) {
     const testCall = async () => {
       console.log('call')
       const medicamentos = await axios.get(`http://localhost:3000/medicamentos?pacienteId=${id}`)
-      setUserData(medicamentos.data)
+      setMedicamentosList(medicamentos.data)
+      const alergia = await axios.get(`http://localhost:3000/alergias?pacienteId=${id}`)
+      setAlergiasList(alergia.data)
     }
     testCall()
   }, [])
 
   React.useEffect(() => {
-    console.log('MEDICAMENTOS: ', userData)
-  }, [ userData ])
+    console.log('MEDICAMENTOS: ', medicamentosList)
+    console.log('ALERGIA: ', alergiasList)
+  }, [ medicamentosList, alergiasList ])
 
 
   return (
@@ -49,7 +53,7 @@ export default function MyHealth({ navigation }) {
             <DataTable.Header style={table.tableHeader}>
               <DataTable.Title textStyle={{color: '#DCDCDC', fontWeight: 700}} style={[{ justifyContent: 'center' }, table.tableTitle]}>MINHAS MEDICAÇÕES</DataTable.Title>
             </DataTable.Header>
-            {userData && userData.map(( data, index ) => (
+            {medicamentosList && medicamentosList.map(( data, index ) => (
               <DataTable.Row style={[{ backgroundColor: checkIndexIsEven(index) ? '#36393E80' : '' },table.tableRow]}> 
                 <DataTable.Cell textStyle={{color: '#DCDCDC'}} style={{ marginHorizontal: 8 }}>{data.medicamentos} { data.periodo.map((periodo) => <Text style={table.pillDays}>{periodo}</Text>)} <Text style={table.pillHour}>{data.horario}</Text></DataTable.Cell>
               </DataTable.Row> 
@@ -74,9 +78,9 @@ export default function MyHealth({ navigation }) {
             <DataTable.Header style={table.tableHeader}>
               <DataTable.Title textStyle={{color: '#DCDCDC', fontWeight: 700}} style={[{ justifyContent: 'center' }, table.tableTitle]}>ALERGIAS</DataTable.Title>
             </DataTable.Header>
-            {data.map(( history, index ) => (
+            {alergiasList && alergiasList.map(( alergia, index ) => (
               <DataTable.Row style={[{ backgroundColor: checkIndexIsEven(index) ? '#36393E80' : '' },table.tableRow]}> 
-                <DataTable.Cell textStyle={{color: '#DCDCDC'}} style={{ marginHorizontal: 8 }}></DataTable.Cell>
+                <DataTable.Cell textStyle={{color: '#DCDCDC'}} style={{ marginHorizontal: 8 }}>{alergia.alergia}</DataTable.Cell>
               </DataTable.Row> 
             ))}
           </DataTable>
@@ -88,7 +92,10 @@ export default function MyHealth({ navigation }) {
               uppercase
               style={{ width: 100, borderRadius: 8 }}
               labelStyle={{ fontWeight: 400 }}
-              onPress={() => console.log('Pressed')}>
+              onPress={() => {
+                navigation.navigate('Registrar Alergia')
+              }} 
+            >
               NOVO
             </Button>
           </View>

@@ -13,6 +13,7 @@ import { AuthProvider } from './src/context/AuthContext';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import TabScreens from './src/navigation/TabScreens';
 import RegistrarMedicamento from './src/screens/RegistrarMedicamento';
+import RegistrarAlergia from './src/screens/RegistrarAlergia';
 
 export default function App() {
   return (
@@ -41,6 +42,10 @@ function Layout() {
           <StackNavigator.Screen
             component={RegistrarMedicamento}
             name="Registrar Medicamento"
+          />
+          <StackNavigator.Screen
+            component={RegistrarAlergia}
+            name="Registrar Alergia"
           />
           </StackNavigator.Navigator>
         </NavigationContainer>
