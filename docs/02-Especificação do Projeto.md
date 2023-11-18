@@ -113,12 +113,12 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
 |RF-001| Permitir que o usuário marque consultas | ALTA | 
-|RF-002| Permitir que o usuário desmarque consultas | ALTA |
+|RF-002| Permitir que o usuário visualize se foi registrado atestado ou encaminhamento | BAIXA |
 |RF-003| Permitir que o usuário veja as consultas marcadas | ALTA |
-|RF-004| Permitir que o usuário avise o atraso | ALTA |
-|RF-005| Permitir que o recepcionista confirme as consultas | ALTA |
-|RF-006| Permitir que o recepcionista disponibilize data para as consultas | ALTA |
-|RF-007| Permitir que o recepcionista confirme o cancelamento das consultas | ALTA |
+|RF-004| Permitir que o usuário visualize as medicações receitadas | ALTA |
+|RF-005| Permitir que o usuário visualize suas alergias | ALTA |
+|RF-006| Permitir que o usuário veja detalhes da consulta | ALTA |
+|RF-007| Permitir que o usuário visualize comunicações do hospital | BAIXA |
 |RF-008| Permitir cadastro e acesso de usuários | ALTA |
 
 ### Requisitos não Funcionais
