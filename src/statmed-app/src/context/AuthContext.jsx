@@ -83,6 +83,21 @@ export const AuthProvider = ({ children }) => {
     }
   }
 
+  const medicamentos = async (medicamentos) => {
+    const id = sessionStorage.getItem('userid')
+
+    try {
+      return await axios.post(`http://localhost:3000/medicamentos?pacienteId=${id}/`, medicamentos)
+    } catch (err) {
+      return {
+        error: true,
+        msg: err.response.data.msg
+      }
+    } finally {
+      navigation.navigate('Minha Saude')
+    }
+  }
+
   const logout = async (email, password) => {
     // Delete token from storage
     await sessionStorage.removeItem(TOKEN_KEY)
@@ -103,6 +118,7 @@ export const AuthProvider = ({ children }) => {
     onLogin: login,
     onLogout: logout,
     onAgendar: agendar,
+    onMedicamentos: medicamentos,
     authState
   }
 

@@ -12,6 +12,7 @@ import AgendarConsulta from './src/screens/AgendarConsulta';
 import { AuthProvider } from './src/context/AuthContext';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import TabScreens from './src/navigation/TabScreens';
+import RegistrarMedicamento from './src/screens/RegistrarMedicamento';
 
 export default function App() {
   return (
@@ -36,6 +37,10 @@ function Layout() {
           <StackNavigator.Screen
             component={AgendarConsulta}
             name="Agendar Consulta"
+          />
+          <StackNavigator.Screen
+            component={RegistrarMedicamento}
+            name="Registrar Medicamento"
           />
           </StackNavigator.Navigator>
         </NavigationContainer>
