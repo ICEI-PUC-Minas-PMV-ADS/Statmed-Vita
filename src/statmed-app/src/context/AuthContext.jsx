@@ -21,7 +21,6 @@ export const AuthProvider = ({ children }) => {
     const loadToken = async () => {
       // const token = await SecureStore.getItemAsync(TOKEN_KEY)
       const token = sessionStorage.getItem(TOKEN_KEY)
-      console.log('stored: ', token)
       if (token) {
         axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
 
@@ -48,14 +47,11 @@ export const AuthProvider = ({ children }) => {
   const login = async (email, password) => {
     try {
       const result = await axios.post(`http://localhost:3030/auth/login`, { cpf: email, senha: password })
-      console.log('AuthContext', result)
 
       setAuthState({
         token: result.data.access_token,
         authenticated: true
       })
-
-      console.log('LOGIN_AUTH_STATE: ', authState)
 
       axios.defaults.headers.common['Authorization'] = `Bearer ${result.data.access_token}`
 
@@ -65,7 +61,6 @@ export const AuthProvider = ({ children }) => {
       return result;
 
     } catch (err) {
-      console.log('err: ', err)
       return {
         error: true,
         msg: err.response.data.msg
@@ -77,7 +72,6 @@ export const AuthProvider = ({ children }) => {
     const id = sessionStorage.getItem('userid')
 
     try {
-      console.log('CONSULTA_SEND: ', consulta)
       return await axios.post(`http://localhost:3000/consultaprox?pacienteId=${id}/`, consulta)
     } catch (err) {
       return {

@@ -19,22 +19,16 @@ export default function AgendarConsulta({ navigator }) {
   const [ plano, setPlano ] =  React.useState('')
   const [ inscricao, setInscricao ] =  React.useState('')
   const { authState, onAgendar } = useAuth()
-  console.log('AUTH_STATE_LOGIN_SCREEN: ', authState)
 
   const [medico, setMedico] = React.useState("");
   const [convenio, setConvenio] = React.useState("");
   const [data, setData] = React.useState("");
 
   React.useEffect(() => {
-    console.log('medico: ', medico)
-    console.log('convenio: ', convenio)
-    console.log('data: ', data)
-
     const especialidade = medicos.find(( data ) => {
       return data.value === medico 
     })
 
-    console.log('especialidade: ', especialidade)
   }, [medico, convenio, data])
 
   const agendar = async () => {

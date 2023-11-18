@@ -20,7 +20,6 @@ export default function MedicalConsultations({ navigation }) {
     const id = sessionStorage.getItem('userid')
 
     const testCall = async () => {
-      console.log('req')
       const consultaProx = await axios.get(`http://localhost:3000/consultaprox?pacienteId=${id}`)
       const consultaAnt = await axios.get(`http://localhost:3000/consultaant?pacienteId=${id}`)
       setUserData({
@@ -32,7 +31,6 @@ export default function MedicalConsultations({ navigation }) {
   }, [])
 
   React.useEffect(() => {
-    console.log('CONSULTAS: ', userData)
     if (userData) {
       setAnteriores(userData.consultaant)
       setProximas(userData.consultaprox)
