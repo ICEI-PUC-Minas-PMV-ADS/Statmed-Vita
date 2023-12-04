@@ -1,8 +1,13 @@
 # Apresentação
 
-<span style="color:red">Pré-requisitos: Todos os demais artefatos</span>
+Link para apresentação PowerPoint: 
 
-Conjunto de slides em um arquivo PowerPoint ou PDF com a apresentação do projeto contemplando todos os itens trabalhados nos demais artefatos.
+https://sgapucminasbr.sharepoint.com/:p:/s/team_sga_2418_2023_2_8512105-GRUPO2-TERA-FEIRA-20H00/EUhrr0EnyCNLikV38bDSrmMBZvXizziarrbL6Rzfi_oGMQ?e=IErIyt&nav=eyJzSWQiOjI4NSwiY0lkIjo1MDYzMTA4OTd9
+
+Link para Video no YouTube: 
+
+https://www.youtube.com/watch?v=XXwAbcrUGlc
+
 
 ## Título do Projeto
 
